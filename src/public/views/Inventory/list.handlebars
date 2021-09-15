@@ -1,0 +1,24 @@
+<table class="table table-hover">
+    <thead>
+        <th>Distrito</th>
+        <th>Alias</th>
+        <th>Email</th>
+        <th>Nombre</th>
+        <th>Activo</th>
+    </thead>
+    <tbody>        
+        {{#if items}}
+            {{#each items}}
+            <tr>
+                <td>{{code}}</td>    
+                <td>{{descriptionItem}}</td>
+                <td>{{categoryItem}}</td>
+                <td>{{stockTotalItem}}</td>
+                <td><a href="#">Eliminar</a></td>
+            </tr>
+            {{/each}}
+        {{/if}}
+    </tbody>
+</table>
+
+

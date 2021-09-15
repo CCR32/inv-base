@@ -1,0 +1,10 @@
+<form action="/login" method="POST">
+    {{#if errmessage}}
+        <h2>errmessage</h2>
+    {{/if}}
+    <input type="text" class="form-control" maxlength="16" placeholder="Usuario" id="username" name="username"/>
+    <input type="password" class="form-control" maxlength="16" placeholder="Contraseña" id="password" name="password"/>
+    <button  class="form-control">Iniciar sesión</button>
+    <button  class="form-control">Cancelar</button>
+</form>
+
