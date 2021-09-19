@@ -47,9 +47,10 @@ const user = (function() {
         }
     }
 
-    this.encryptPassword = async function(password, user) {
-        user.password = await bcrypt.hashSync(password, 10);
-        return user.password;
+    this.verifyPassword = async function(password, user) {
+    
+        return bcrypt.compareSync(password, user.password)
+        
     }
 
 });

@@ -4,7 +4,7 @@ const path = require('path');
 const app = express(); 
 
 const session = require('express-session');
-const passport = require('passport');
+const passport = require('./config/passport');
 const routerIndex = require('../src/routes/UserRouter');
 /*view engine*/
 app.engine('handlebars', exphbs({
@@ -18,6 +18,7 @@ app.use(session({secret: 'SECRET', resave:false, saveUninitialized:true}));
 /*Configurar passport*/
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 

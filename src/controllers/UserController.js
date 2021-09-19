@@ -1,6 +1,8 @@
 
 const User = require('../models/user');
+const bcrypt = require('bcryptjs');
 const passport = require('passport');
+
 
 
 async function login(req, res, next) {
@@ -25,6 +27,8 @@ async function logoff(req, res) {
 }
 
 async function signup(req, res){
+    const password = bcrypt.hashSync("pwd0CCAdmin", 10);
+    console.log(password);
     res.render('login/login');
 }
 
@@ -35,4 +39,4 @@ const isLogged = (req, res, next) => {
     }
     return res.redirect('/login');
 }
-module.exports = { login, logoff, isLogged,signup };
+module.exports = { login, logoff, isLogged, signup };

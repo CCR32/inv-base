@@ -12,10 +12,12 @@ passport.use(new LocalStategy({
             console.log('Entra en passport');
             const user = new User();
             let parameters = [username];
-            let result = await user.get("call QryUsrLogin(?)", parameters);
-            console.log(result.result[0].contrasena);
+            let result = await user.get("call QuerySelect_User(?)", parameters);                         
             if (result.result !== null && result.result !== undefined) {
-                return done(null, result.result);
+                user.password = result.result[0].contrasena;
+                if (await user.verifyPassword(password, user)){
+                    return done(null, result.result);
+                }
             }
         } catch (error) {
             console.log("Error dentro de passport:" + error);
