@@ -1,7 +1,23 @@
 
-const Product = require('../models/product');
+const Product = require('../../models/product');
 const messages = require('../../helpers/messages');
 const { response } = require('express');
+
+async function find(req,res){
+    const product = new Product();
+    try{
+        let parameters = [req.body.upc];
+        let product = await new Product.find("QuerySelect_Product",parameters);
+        if (product.result !== null && product.result !== undefined){
+            if (product.result.hasOwnProperty("result")){
+                res.status(200).json(product.result);                                    
+            }
+            throw new Error(messages.err_product_not_found);
+        }
+    } catch (e){
+        res.status(500).json(e);
+    }
+}
 
 async function list(req,res){
     const product = new Product();
@@ -16,7 +32,6 @@ async function list(req,res){
     } catch (e){
         res.status(500).json(e);
     }
-
 }
 async function destroy(req,res){
     const product = new Product(); 
@@ -55,4 +70,4 @@ async function create(req, res){
     }
 }
 
-module.exports = { create,destroy,list };
+module.exports = { create,destroy,list,find};

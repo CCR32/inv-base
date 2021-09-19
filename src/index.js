@@ -6,6 +6,7 @@ const app = express();
 const session = require('express-session');
 const passport = require('./config/passport');
 const routerIndex = require('../src/routes/UserRouter');
+const routerProudcts = require('../src/routes/ProductRouter');
 /*view engine*/
 app.engine('handlebars', exphbs({
     partialsDir: path.join(__dirname, 'views/partials')
@@ -24,6 +25,7 @@ app.use(express.urlencoded({extended:true}));
 
 
 app.use(routerIndex);
+app.use(routerProudcts);
 
 app.listen(3000, (req, res) => {
     console.log('Inicializando');
