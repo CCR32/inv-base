@@ -1,13 +1,7 @@
 const ModelInstance = require('../libs/model');
 const bcrypt = require('bcryptjs');
 
-const userInstance = (function() {
-    this.IM_PASSWORD = null;
-    this.IM_PALABRA = null;
-    this.CLVPOS = null;
-    this.CL_EMPLEADO = null;
-    this.SN_ACTIVO = null;
-    this.NU_PREGUNTA = null;
+const userInstance = (function() {   
     this.username = null;
     this.password = null;
     this.error = null;

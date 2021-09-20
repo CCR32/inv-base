@@ -34,19 +34,22 @@ async function list(req,res){
     }
 }
 async function destroy(req,res){
+    console.log('Dentro de products destroy');
     const product = new Product(); 
     let parameters = [req.body.cCodigo]; 
     try{
         if (parameters instanceof Array){
-            let product = await new Product.delete("QueryDelete_product", parameters);
-            if (product != null){
-                if (product.hasOwnProperty("numberOfRowsAffected")){
-                    res.status(200).json(product);
+            let result = await  product.delete("call QueryDelete_product(?)", parameters);
+            if (result != null){
+                console.log(result);
+                if (result.hasOwnProperty("numberOfResult")){
+                    res.status(200).json(result);
                 }
                 throw new Error(messages.err_product_not_found);
             }
         }
     }catch(e){
+        console.log(e);
         res.status(500).json(e);
     }
 }

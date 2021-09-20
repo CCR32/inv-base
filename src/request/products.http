@@ -1,0 +1,14 @@
+### GET Obtener todos los productos
+GET http://localhost:3000/products/list
+
+### GET Obtener producto especifico
+GET http://localhost:3000/products/list
+
+### Insertar un registro 
+POST http://localhost:3000/products/delete
+Content-Type: application/json
+
+{
+   "cCodigo":"0000000001000",
+   "body":"este es el body"
+}

@@ -115,9 +115,10 @@ const dbObject = (function() {
                         try {
                             if (err) throw new Error(err);                          
                             _this.res = result;
-                            resolve(new resultObject(_this.res).withResult(_this.res).withNumberOfRows(_this.res.length));
+                            //console.log("result database: " + _this.res.affectedRows);
+                            resolve(new resultObject(_this.res).withResult(_this.res).withNumberOfRows(_this.res.affectedRows));
 
-                            return _this.res;
+                            //return _this.res;
                         } catch (e) {
                             resolve(new resultObject(this).withError(e.message));
                         }

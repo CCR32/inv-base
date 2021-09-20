@@ -1,0 +1,9 @@
+
+8-19-2021 12:26:28 Ejecutando procedimiento.-> QueryDelete_product 000000000100='000000000100' 
+8-19-2021 12:27:7 Ejecutando procedimiento.-> QueryDelete_product 000000000100='000000000100' 
+8-19-2021 12:28:15 Ejecutando procedimiento.-> call QueryDelete_product(?) 000000000100='000000000100' 
+8-19-2021 12:35:47 Ejecutando procedimiento.-> call QueryDelete_product(?) 0000000001000='0000000001000' 
+8-19-2021 12:39:50 Ejecutando procedimiento.-> call QueryDelete_product(?) 0000000001000='0000000001000' 
+8-19-2021 12:40:38 Ejecutando procedimiento.-> call QueryDelete_product(?) 0000000001000='0000000001000' 
+8-19-2021 12:41:27 Ejecutando procedimiento.-> call QueryDelete_product(?) 0000000001000='0000000001000' 
+8-19-2021 12:42:45 Ejecutando procedimiento.-> call QueryDelete_product(?) 0000000001000='0000000001000' 
