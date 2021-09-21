@@ -7,3 +7,8 @@
 8-19-2021 12:40:38 Ejecutando procedimiento.-> call QueryDelete_product(?) 0000000001000='0000000001000' 
 8-19-2021 12:41:27 Ejecutando procedimiento.-> call QueryDelete_product(?) 0000000001000='0000000001000' 
 8-19-2021 12:42:45 Ejecutando procedimiento.-> call QueryDelete_product(?) 0000000001000='0000000001000' 
+8-21-2021 14:11:12 Ejecutando procedimiento.-> call QueryInsert_product(?,?,?,?,?,?,?,?,?) 07501020218000='07501020218000' Prueba artìculo='Prueba artìculo' 01='01' 02='02' 77.8='77.8' 0='0' N='N' 1='1' 1='1' 
+8-21-2021 14:11:28 Ejecutando procedimiento.-> call QueryInsert_product(?,?,?,?,?,?,?,?,?) 0750102021800='0750102021800' Prueba artìculo='Prueba artìculo' 01='01' 02='02' 77.8='77.8' 0='0' N='N' 1='1' 1='1' 
+8-21-2021 14:13:30 Ejecutando procedimiento.-> call QueryInsert_product(?,?,?,?,?,?,?,?,?) 9750102021800='9750102021800' Prueba artìculo='Prueba artìculo' 01='01' 02='02' 77.8='77.8' 0='0' N='N' 1='1' 1='1' 
+8-21-2021 14:14:18 Ejecutando procedimiento.-> call QueryInsert_product(?,?,?,?,?,?,?,?,?) 9750102021800='9750102021800' Prueba artìculo='Prueba artìculo' 01='01' 02='02' 77.8='77.8' 0='0' N='N' 1='1' 1='1' 
+8-21-2021 14:15:32 Ejecutando procedimiento.-> call QueryInsert_product(?,?,?,?,?,?,?,?,?) 9750102021800='9750102021800' Prueba artìculo='Prueba artìculo' 01='01' 02='02' 77.8='77.8' 0='0' N='N' 1='1' 1='1' 

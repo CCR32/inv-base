@@ -19,6 +19,7 @@ const product = (function() {
     this.model = new modelInstance();
 
     this.get = async function(query) {
+        console.log('dentro de get');
         try {
             return await this.model.executeMYSQL(query, new productInstance());
         } catch (e) {

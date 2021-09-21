@@ -1,8 +1,9 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
+const morgan = require('morgan');
 const path = require('path');
 const app = express(); 
-
+const dotenv = require('dotenv').config();
 const session = require('express-session');
 const passport = require('./config/passport');
 const routerIndex = require('../src/routes/UserRouter');
@@ -22,12 +23,11 @@ app.use(passport.session());
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-
+app.use(morgan({ options: "default" }));
 
 app.use(routerIndex);
 app.use(routerProudcts);
 
-app.listen(3000, (req, res) => {
-    console.log('Inicializando');
-});
 
+/// Inicializar servidor 
+app.listen(process.env.PORT || 3000, () => { console.log(process.env.PORT); });
