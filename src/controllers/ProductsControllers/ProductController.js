@@ -7,7 +7,7 @@ async function find(req,res){
     const product = new Product();
     try{
         let parameters = [req.body.upc];
-        let product = await new Product.find("QuerySelect_Product",parameters);
+        let product = await new product.find("QuerySelect_Product",parameters);
         if (product.result !== null && product.result !== undefined){
             if (product.result.hasOwnProperty("result")){
                 res.status(200).json(product.result);                                    
@@ -21,16 +21,18 @@ async function find(req,res){
 
 async function list(req,res){
     const product = new Product();
+    console.log('Dentro de list');
     try{
-        let product = await new Product.get("QuerySelect_AllProduct");
-        if (product.result !== null && product.result !== undefined){
-            if (product.result.hasOwnProperty("result")){
-                res.status(200).json(product.result);                                    
+        let result = await product.get("call QuerySelect_AllProduct;");
+        if (result.result !== null && product.result !== undefined){
+            if (result.result.hasOwnProperty("result")){
+                res.status(200).json(result.result);                                    
             }
             throw new Error(messages.err_product_not_found);
         }
     } catch (e){
-        res.status(500).json(e);
+        console.log('Ocurrio un error:' + e.message);
+        res.status(500).json({e});
     }
 }
 async function destroy(req,res){
