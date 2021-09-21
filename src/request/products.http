@@ -12,3 +12,19 @@ Content-Type: application/json
    "cCodigo":"0000000001000",
    "body":"este es el body"
 }
+
+
+POST http://localhost:3000/products/add
+Content-Type: application/json 
+
+{
+   "cCodigo":"07501020218000",
+   "cDescripcion": "Prueba artìculo",
+   "cCategoria":"01",
+   "cSubcategoria":"02",
+   "dPrecioActual":77.80,
+   "dPrecioNormal":0.00,
+   "cTipoPrecio":"N",
+   "cEstado":1,
+   "iTipoObjeto":1
+}

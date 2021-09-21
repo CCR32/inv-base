@@ -1,7 +1,7 @@
 
 const Product = require('../../models/product');
 const messages = require('../../helpers/messages');
-const { response } = require('express');
+
 
 async function find(req,res){
     const product = new Product();
@@ -14,7 +14,7 @@ async function find(req,res){
             }
             throw new Error(messages.err_product_not_found);
         }
-    } catch (e){
+    } catch (e) {
         res.status(500).json(e);
     }
 }
@@ -53,24 +53,29 @@ async function destroy(req,res){
         res.status(500).json(e);
     }
 }
-async function create(req, res){
-    const product = new Product();
+
+
+async function create(req,res){
+    console.log('Dentro de products create');
+    const product = new Product();     
     let parameters = [rq.body.cCodigo, req.body.cDescripcion, req.body.cCategoria, 
         req.body.cSubcategoria, req.body.dPrecioActual, req.body.dPrecioNormal,
         req.body.cTipoPrecio, req.body.cEstado, req.body.iTipoObjeto];                              
-    try {
-        if (parameters instanceof Array){
-            let register = await  new Product.create("QueryInsert_product(?,?,?,?,?,?,?,?,?", parameters);
-            if (register != null && register != undefined){
-                if (register.hasOwnProperty("numberOfRows")){
-                    return res.status(200).json({product: product});
-                }   
-                throw new Error(messages.err_product_add);
+        console.log(parameters);
+    try{
+        if (parameters instanceof Array){            
+            let result = await  new product.create("call QueryInsert_product(?,?,?,?,?,?,?,?,?)", parameters);
+            if (result != null){
+                console.log(result);
+                if (result.hasOwnProperty("numberOfResult")){
+                    res.status(200).json(result);
+                }
+                throw new Error(messages.err_product_not_found);
             }
         }
     }catch(e){
+        console.log(e);
         res.status(500).json(e);
     }
 }
-
 module.exports = { create,destroy,list,find};
