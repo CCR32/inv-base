@@ -36,6 +36,16 @@ const Inventory = (function() {
             throw new Error(err);
         }
     }
+
+    this.find = async function(procedure, parameters) {
+        try {
+            return await this.model.executeMYSQL(procedure, new inventoryInstance(),parameters);
+        } catch (err) {
+            throw new Error(err);
+        }
+
+    }
+
 });
 
 

@@ -13,7 +13,7 @@ async function InventoryRegister(req, res) {
                 if (result.hasOwnProperty("numberOfResult")){                    
                     res.status(200).json(result);
                 } else {
-                    throw new Error(messages.err_product_not_found);
+                    throw new Error(messages.err_inv_add);
                 }
             }
         }
@@ -84,7 +84,7 @@ async function View(req, res) {
 
 async function find(req, res) {
     let inventory = new Inventory();   
-    let parameters = [req.parameters.codigo];
+    let parameters = [req.params.codigo];
     try{
         let result = await inventory.find("call QuerySelect_InventoryItem(?)", parameters);
         if (result.result !== null && result.result !== undefined){            
