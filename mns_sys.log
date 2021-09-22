@@ -16,3 +16,8 @@
 8-22-2021 11:53:40 Ejecutando procedimiento.-> call QueryInsert_Inventory(?,?,?,?) undefined='undefined' undefined='undefined' undefined='undefined' undefined='undefined' 
 8-22-2021 11:56:38 Ejecutando procedimiento.-> call QueryInsert_Inventory(?,?,?,?) 00000001='00000001' 000000000003='000000000003' 20='20' 25='25' 
 8-22-2021 12:2:51 Ejecutando procedimiento.-> call QueryDelete_Inventory(?) 000000000003='000000000003' 
+8-22-2021 13:55:26 Ejecutando procedimiento.-> call QueryInsert_Category(?,?,?,?) 001='001' Categoria de prueba='Categoria de prueba' Descripcion normal='Descripcion normal' Categoria de prueba descripciòn larga='Categoria de prueba descripciòn larga' 
+8-22-2021 13:59:11 Ejecutando procedimiento.-> call QueryInsert_Category(?,?,?,?) 001='001' Categoria de prueba='Categoria de prueba' Descripcion normal='Descripcion normal' Categoria de prueba descripciòn larga='Categoria de prueba descripciòn larga' 
+8-22-2021 14:7:5 Ejecutando procedimiento.-> call QueryDelete_Category(?) 001='001' 
+8-22-2021 14:9:35 Ejecutando procedimiento.-> call QueryInsert_Category(?,?,?,?) 001='001' Categoria de prueba='Categoria de prueba' Descripcion normal='Descripcion normal' Categoria de prueba descripciòn larga='Categoria de prueba descripciòn larga' 
+8-22-2021 14:9:51 Ejecutando procedimiento.-> call QueryInsert_Category(?,?,?,?) 002='002' Categoria de prueba='Categoria de prueba' Descripcion normal='Descripcion normal' Categoria de prueba descripciòn larga='Categoria de prueba descripciòn larga' 

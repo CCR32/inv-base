@@ -1,48 +1,87 @@
 const Category = require('../../models/Categorys/Category');
+const messages = require('../../helpers/messages');
 
 
 async function CategoryRegister(req, res) {
-    let category = new Category();
-    try {
-        let parameters = [req.body.code, req.body.name, req.body.sdescription, req.body.ldescription,
-            req.body.status
-        ];
-        let result = await category.create("CALL QryInsert_Category(?,?,?,?,?)", parameters)
-        res.status(200).json(result);
-
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    const category = new Category();     
+    let parameters = [req.body.cCodigo, req.body.cNombreCategoria, req.body.cDescripcionCategoria,
+                     req.body.cDescripcionLarga];                                      
+    try{
+        if (parameters instanceof Array){            
+            let result = await  category.create("call QueryInsert_Category(?,?,?,?)", parameters);            
+            if (result != null){                
+                if (result.hasOwnProperty("numberOfResult")){                    
+                    res.status(200).json(result);
+                } else {
+                    throw new Error(messages.err_cat_add);
+                }
+            }
+        }
+    }catch(e){        
+        res.status(404).json({"error":e.message});
+    }    
 }
 
 /* eliminar categorias para api */
 async function CateogryDelete(req, res) {
-    let category = new Category();
-    try {
-        let parameters = [req.body.code, req.body.name, req.body.sdescription, req.body.ldescription,
-            req.body.status, req.body.status
-        ];
-        let result = await category.delete("CALL QryDelete_Category(?)", parameters);
-        res.status(200).json(result);
-
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    const category = new Category();
+    let parameters = [req.body.cCode];                                      
+    try{
+        if (parameters instanceof Array){            
+            let result = await  category.delete("call QueryDelete_Category(?)", parameters);            
+            if (result != null){                
+                if (result.hasOwnProperty("numberOfResult")){                    
+                    res.status(200).json(result);
+                } else {
+                    throw new Error(messages.err_cat_not_found);
+                }
+            }
+        }
+    }catch(e){        
+        res.status(404).json({"error":e.message});
+    }    
 }
 /* Lista de categorias para api */
 async function CategoryList(req, res) {
-    let category = new Category();
-    try {
-        let parameters = {};
-        let result = await category.get("CALL QrySelect_Category", parameters);
-        return res.status(200).json({ result });
+    let category = new Category();   
+    try{
+        let result = await category.get("call QuerySelect_AllCategorys");
+        if (result.result !== null && result.result !== undefined){            
+            if (result.hasOwnProperty("result")){
+                if (result.result.length == 0)
+                    throw new Error(messages.err_cat_not_found);    
+                res.status(200).json(result.result);                                    
+            } else {
+                throw new Error(messages.err_cat_not_found);
+            }
+        }
+    } catch (e){        
+        res.status(404).json({"error":e.message});
+    }
+}
 
-    } catch (err) {
-        res.status(500).json(err);
+
+/* Lista de categorias para api */
+async function find(req, res) {
+    let category = new Category();   
+    let parameters = [req.params.code];
+    try{
+        let result = await category.find("call QuerySelect_Category(?)", parameters);
+        if (result.result !== null && result.result !== undefined){            
+            if (result.hasOwnProperty("result")){
+                if (result.result.length == 0)
+                    throw new Error(messages.err_cat_not_found);    
+                res.status(200).json(result.result);                                    
+            } else {
+                throw new Error(messages.err_cat_not_found);
+            }
+        }
+    } catch (e){        
+        res.status(404).json({"error":e.message});
     }
 }
 
 
 
 
-module.exports = { CategoryRegister, CateogryDelete, CategoryList };
+module.exports = { CategoryRegister, CateogryDelete, CategoryList, find };

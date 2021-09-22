@@ -37,6 +37,14 @@ const Category = (function() {
             throw new Error(err);
         }
     }
+
+    this.find  = async function(procedure, parameters) {
+        try {
+            return await this.model.executeMYSQL(procedure, new categoryInstance(), parameters);
+        } catch (err) {
+            throw new Error(err);
+        }
+    }
 });
 
 module.exports = Category;

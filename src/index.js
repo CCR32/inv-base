@@ -9,6 +9,7 @@ const passport = require('./config/passport');
 const routerIndex = require('../src/routes/UserRouter');
 const routerProudcts = require('../src/routes/ProductRouter');
 const routerInventory = require('../src/routes/InventoryRouter');
+const routerCatgegory = require('../src/routes/CategoryRouter');
 /*view engine*/
 app.engine('handlebars', exphbs({
     partialsDir: path.join(__dirname, 'views/partials')
@@ -29,6 +30,7 @@ app.use(morgan({ options: "default" }));
 app.use(routerIndex);
 app.use(routerProudcts);
 app.use(routerInventory);
+app.use(routerCatgegory);
 
 
 /// Inicializar servidor 

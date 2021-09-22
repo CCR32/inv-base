@@ -8,7 +8,10 @@ const  messages = {
 
     /*Mensajes para invnentario*/
     err_inv_not_found: "Articulo no se encuentra en inventario", 
-    err_inv_add : "Error al agregar artículo a inventario"
+    err_inv_add : "Error al agregar artículo a inventario",
 
+    /*Mensajes para categorias*/
+    err_cat_not_found: "Categoria no se encuentra en listado de categorias", 
+    err_cat_add: "Error al agregar categoria"
 };
 module.exports = messages;
