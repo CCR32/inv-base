@@ -1,17 +1,40 @@
 const router = require('express').Router(); 
 const ctrlCategory = require('../controllers/CategoryControllers/CategoryController');
 const ctrlSubcategory = require('../controllers/CategoryControllers/SubcategoryController');
-
-router.post('/Category/add', ctrlCategory.CategoryRegister);
-router.get('/Category/:code', ctrlCategory.find);
-router.post('/Category/delete', ctrlCategory.CategoryDelete);
-router.get('/Category', ctrlCategory.CategoryList);
+const userController = require('../controllers/UserController');
 
 
-router.get('/Subcategory', ctrlSubcategory.SubcategoryView);
-router.get('/Subcategory/:code', ctrlSubcategory.find);
-router.post('/Subcategory/add', ctrlSubcategory.SubcategoryRegister);
-router.post('/Subcategory/delete', ctrlSubcategory.SubcategoryDelete);
+router.post('/Category/add',
+        userController.isLogged,  
+        ctrlCategory.CategoryRegister);
+
+router.get('/Category/:code',
+        userController.isLogged, 
+        ctrlCategory.find);
+
+router.post('/Category/delete',
+        userController.isLogged, 
+        ctrlCategory.CategoryDelete);
+
+router.get('/Category', 
+        userController.isLogged, 
+        ctrlCategory.CategoryList);
+
+router.get('/Subcategory', 
+        userController.isLogged,
+        ctrlSubcategory.SubcategoryView);
+
+router.get('/Subcategory/:code', 
+        userController.isLogged, 
+        ctrlSubcategory.find);
+
+router.post('/Subcategory/add', 
+        userController.isLogged,
+        ctrlSubcategory.SubcategoryRegister);
+
+router.post('/Subcategory/delete', 
+        userController.isLogged,
+        ctrlSubcategory.SubcategoryDelete);
 
 
 

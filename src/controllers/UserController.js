@@ -33,10 +33,9 @@ async function signup(req, res){
 }
 
 const isLogged = (req, res, next) => {
-    if (req.isAuthenticated()) {
-        console.log('is auth');
+    if (req.isAuthenticated()) {        
         return next();
     }
-    return res.redirect('/login');
+    res.redirect('/login');
 }
 module.exports = { login, logoff, isLogged, signup };
