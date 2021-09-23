@@ -77,8 +77,8 @@ async function list(req,res){
         if (result.result !== null && result.result !== undefined){            
             if (result.hasOwnProperty("result")){
                 if (result.result.length == 0)
-                    throw new Error(messages.err_product_not_found);    
-                res.status(200).json(result.result);                                    
+                    throw new Error(messages.err_product_not_found);                    
+                res.render('Product/index',{items:result.result});
             } else {
                 throw new Error(messages.err_product_not_found);
             }

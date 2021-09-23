@@ -23,7 +23,7 @@ async function CategoryRegister(req, res) {
 }
 
 /* eliminar categorias para api */
-async function CateogryDelete(req, res) {
+async function CategoryDelete(req, res) {
     const category = new Category();
     let parameters = [req.body.cCode];                                      
     try{
@@ -43,14 +43,16 @@ async function CateogryDelete(req, res) {
 }
 /* Lista de categorias para api */
 async function CategoryList(req, res) {
+    console.log('Dentro de categoryView');
     let category = new Category();   
     try{
         let result = await category.get("call QuerySelect_AllCategorys");
         if (result.result !== null && result.result !== undefined){            
             if (result.hasOwnProperty("result")){
-                if (result.result.length == 0)
-                    throw new Error(messages.err_cat_not_found);    
-                res.status(200).json(result.result);                                    
+                if (result.result.length == 0){
+                    throw new Error(messages.err_cat_not_found);                    
+                }                
+                res.render('Category/index',{items:result.result});
             } else {
                 throw new Error(messages.err_cat_not_found);
             }
@@ -59,6 +61,7 @@ async function CategoryList(req, res) {
         res.status(404).json({"error":e.message});
     }
 }
+
 
 
 /* Lista de categorias para api */
@@ -84,4 +87,4 @@ async function find(req, res) {
 
 
 
-module.exports = { CategoryRegister, CateogryDelete, CategoryList, find };
+module.exports = { CategoryRegister, CategoryDelete,  CategoryList,find};

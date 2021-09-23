@@ -4,8 +4,9 @@ const ctrlSubcategory = require('../controllers/CategoryControllers/SubcategoryC
 
 router.post('/Category/add', ctrlCategory.CategoryRegister);
 router.get('/Category/:code', ctrlCategory.find);
-router.post('/Category/delete', ctrlCategory.CateogryDelete);
+router.post('/Category/delete', ctrlCategory.CategoryDelete);
 router.get('/Category', ctrlCategory.CategoryList);
+
 
 router.get('/Subcategory', ctrlSubcategory. SubcategoryList);
 router.get('/Subcategory/:code', ctrlSubcategory.find);
