@@ -38,4 +38,10 @@ const isLogged = (req, res, next) => {
     }
     res.redirect('/login');
 }
-module.exports = { login, logoff, isLogged, signup };
+const isLoggedApi = (req, res, next) => {
+    if (req.isAuthenticated()){
+        return next();
+    }
+    res.status(200).json({error:"Loggin is required"});
+}
+module.exports = { login, logoff, isLogged, signup, isLoggedApi };

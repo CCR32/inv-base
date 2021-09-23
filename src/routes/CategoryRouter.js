@@ -9,7 +9,7 @@ router.post('/Category/add',
         ctrlCategory.CategoryRegister);
 
 router.get('/Category/:code',
-        userController.isLogged, 
+        userController.isLoggedApi, 
         ctrlCategory.find);
 
 router.post('/Category/delete',
@@ -25,7 +25,7 @@ router.get('/Subcategory',
         ctrlSubcategory.SubcategoryView);
 
 router.get('/Subcategory/:code', 
-        userController.isLogged, 
+        userController.isLoggedApi, 
         ctrlSubcategory.find);
 
 router.post('/Subcategory/add', 
