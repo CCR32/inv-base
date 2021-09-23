@@ -48,7 +48,8 @@ async function SubcategoryView(req,res){
             if (result.hasOwnProperty("result")){
                 if (result.result.length == 0)
                     throw new Error(messages.err_cat_not_found);    
-                res.status(200).json(result.result);                                    
+                //res.status(200).json(result.result);                                    
+                res.render('Subcategory/index', {items:result.result});
             } else {
                 throw new Error(messages.err_cat_not_found);
             }

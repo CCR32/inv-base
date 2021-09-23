@@ -1,0 +1,26 @@
+<table class="table table-hover">
+    <thead>
+        <th>SubCategoria</th>
+        <th>Categoria</th>
+        <th>Nombre categoria</th>
+        <th>Descripcion</th>
+        <th>Descripcion larga</th>
+        <th>Eliminar</th>
+        <th>Editar</th>
+    </thead>
+    <tbody>        
+        {{#if items}}
+            {{#each items}}
+            <tr>
+                <td>{{subcategoria}}</td>    
+                <td>{{codeCategoria}}</td>
+                <td>{{nombresubCategoria}}</td>
+                <td>{{descripcionsubCategoria}}</td>
+                <td>{{descripcionLarga}}</td>
+                <td><a href="#">Eliminar</a></td>
+                <td><a href="#">Editar</a></td>
+            </tr>
+            {{/each}}
+        {{/if}}
+    </tbody>
+</table>

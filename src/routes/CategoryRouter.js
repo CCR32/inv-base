@@ -8,7 +8,7 @@ router.post('/Category/delete', ctrlCategory.CategoryDelete);
 router.get('/Category', ctrlCategory.CategoryList);
 
 
-router.get('/Subcategory', ctrlSubcategory. SubcategoryList);
+router.get('/Subcategory', ctrlSubcategory.SubcategoryView);
 router.get('/Subcategory/:code', ctrlSubcategory.find);
 router.post('/Subcategory/add', ctrlSubcategory.SubcategoryRegister);
 router.post('/Subcategory/delete', ctrlSubcategory.SubcategoryDelete);

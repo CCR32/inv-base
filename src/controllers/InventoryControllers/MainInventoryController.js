@@ -71,7 +71,7 @@ async function View(req, res) {
             if (result.hasOwnProperty("result")){
                 if (result.result.length == 0)
                     throw new Error(messages.err_inv_not_found);                                         
-                res.render('Inventory/list',{items:result.result});
+                res.render('Inventory/index',{items:result.result});
             } else {
                 throw new Error(messages.err_inv_not_found);
             }
