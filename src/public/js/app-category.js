@@ -25,15 +25,19 @@ class appCategory{
         }
     }
 
-    getCategory(){
-        fetch(this.url +"/Category/002")
+    refreshCategory(target, category){
+        fetch(this.url +"/Category/" + category)
         .then((response) => response.json())
-        .then((json) => {
-            alert(json[0]);
-    })
+        .then((json) => {            
+                this.currentRow.cells[1].innerText = json[0].nombreCategoria;                         
+                this.currentRow.cells[2].innerText = json[0].descripcionCategoria;
+                this.currentRow.cells[3].innerText = json[0].descripcionLarga;
+        })
     }
     //Eliminar una categoria 
-    deleteCategory(target, category){
+    deleteCategory(target, category,currentRow){
+        this.categorySelected = category;
+        this.currentRow = currentRow;
         if (target.parentElement.parentElement !== null){                
             target.parentElement.parentElement.remove();            
             try {
@@ -56,7 +60,9 @@ class appCategory{
         }
     }
     // Devolver informacion para editar categoria. 
-    editCategory(target,category){
+    editCategory(target,category,currentRow){
+        this.categorySelected = category;
+        this.currentRow = currentRow;
         fetch( this.url + "/Category/"+category)
                 .then((response) => response.json())
                 .then((json) => {         
@@ -78,7 +84,7 @@ class appCategory{
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ 
-                    "cCodigo": "002",   
+                    "cCodigo": this.categorySelected,   
                     "cNombreCategoria": this.name.value,
                     "cDescripcionCategoria":this.description.value,
                     "cDescripcionLarga": this.large.value   
@@ -86,6 +92,8 @@ class appCategory{
             }).then(response => {
                 if (response.statusText.includes("OK")) {
                     alert("Registro actualizado");                        
+                    this.refreshCategory(target, 
+                    this.categorySelected)
                     $('#dialog-edit').modal('hide');
                 }
             }).catch(error => {
@@ -105,11 +113,13 @@ class appCategory{
         switch(event.target.className){
             case "item-d-a":
                 appCategoryInstance.deleteCategory(event.target,
-                    this.rows[event.target.parentElement.parentElement.rowIndex-1].cells[0].innerText);
+                    this.rows[event.target.parentElement.parentElement.rowIndex-1].cells[0].innerText, 
+                    this.rows[event.target.parentElement.parentElement.rowIndex-1]);
                 break;
             case "item-e-a":
                 appCategoryInstance.editCategory(event.target,
-                    this.rows[event.target.parentElement.parentElement.rowIndex-1].cells[0].innerText);
+                    this.rows[event.target.parentElement.parentElement.rowIndex-1].cells[0].innerText,
+                    this.rows[event.target.parentElement.parentElement.rowIndex-1]);
                 break;                     
         }
         switch(event.target.id){
