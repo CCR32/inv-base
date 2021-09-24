@@ -9,7 +9,7 @@ async function login(req, res, next) {
     let tempuser = new User();
     try {
         passport.authenticate('local', {
-            successRedirect: '/app/Inventory/list',
+            successRedirect: '/Category',
             failureRedirect: '/error'
         })(req, res, next);
     } catch (err) {

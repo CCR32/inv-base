@@ -7,7 +7,7 @@
         <th>Eliminar</th>
         <th>Editar</th>
     </thead>
-    <tbody>        
+    <tbody id="body-category">        
         {{#if items}}
             {{#each items}}
             <tr>
@@ -15,10 +15,49 @@
                 <td>{{nombreCategoria}}</td>
                 <td>{{descripcionCategoria}}</td>
                 <td>{{descripcionLarga}}</td>
-                <td><a href="#">Eliminar</a></td>
-                <td><a href="#">Editar</a></td>
+                <td class='item-d-td'><a class='item-d-a' href="#">Eliminar</a></td>
+                <td class='item-e-td'><a class='item-e-a' href="#">Editar</a></td>
             </tr>
             {{/each}}
         {{/if}}
     </tbody>
 </table>
+
+<div id="dialog-edit" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">     
+          <div class="form">
+           <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <input type="text" class="form-control" id="cat-name">
+                </div>     
+           </div>
+           <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <input type="text" class="form-control" id="cat-description">
+                </div>     
+           </div>          
+           <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <input type="text" class="form-control" id="cat-des-large">
+                </div>     
+           </div>                  
+          </div>          
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="save-changes" class="btn btn-primary item-s-changes">Save changes</button>
+        <button type="button" id="cancel-save" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="/public/js/app-category.js"></script>
