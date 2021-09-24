@@ -2,6 +2,10 @@ const Category = require('../../models/Categorys/Category');
 const messages = require('../../helpers/messages');
 
 
+
+async function ViewRegister(req,res){
+    res.render('Category/add');
+}
 async function CategoryRegister(req, res) {
     const category = new Category();     
     let parameters = [req.body.cCodigo, req.body.cNombreCategoria, req.body.cDescripcionCategoria,
@@ -87,4 +91,4 @@ async function find(req, res) {
 
 
 
-module.exports = { CategoryRegister, CategoryDelete,  CategoryList,find};
+module.exports = { CategoryRegister, CategoryDelete,  CategoryList,find, ViewRegister};

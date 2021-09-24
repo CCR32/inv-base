@@ -6,6 +6,8 @@ class appCategory{
         this.categorySelected = null; 
         this.tableElement =  
         document.querySelector('#body-category');  
+        this.catid = 
+        document.querySelector('#cat-id');
         this.name = 
         document.querySelector('#cat-name');
         this.description = 
@@ -65,8 +67,9 @@ class appCategory{
         this.currentRow = currentRow;
         fetch( this.url + "/Category/"+category)
                 .then((response) => response.json())
-                .then((json) => {         
-                this.name.value = json[0].nombreCategoria;                         
+                .then((json) => {       
+                this.catid.value = json[0].code;
+                this.name.value  = json[0].nombreCategoria;                         
                 this.description.value = json[0].descripcionCategoria;
                 this.large.value = json[0].descripcionLarga;
                 this.title.innerHTML = 
@@ -76,8 +79,9 @@ class appCategory{
     }
 
     // Guardar una categoria editada.
-    saveCategory(target){
+    saveCategory(target){        
         try {
+            this.verifyInputs();
             fetch(this.url + "/Category/add", {
                 method: 'POST',
                 headers: {
@@ -103,9 +107,21 @@ class appCategory{
             alert(err);
         }    
     }
-
+    //Verificar entrada de datos
+    verifyInputs(){
+        if (this.categorySelected == null || this.categorySelected.length == 0)
+            throw new Error("La categoria no puede estar vacia");
+        if (this.name.value == "" || this.name.value.length == 0)
+            throw new Error("El nombre de la categoria es obligatorio");
+        if (this.description.value == "" || this.description.length == 0)
+            throw new Error("La categoria requiere una descripción");
+        if (this.large.value == "" || this.large.length == 0)
+            throw new Error("La categoria requiere una descripción larga");
+    }
+    
+    //Cacecelar operación
     cancelSave(target){
-        console.log('cancel');
+        $('#dialog-edit').modal('hide');
     }
   
     //Procesar eventos

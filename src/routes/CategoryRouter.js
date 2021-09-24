@@ -8,6 +8,10 @@ router.post('/Category/add',
         userController.isLogged,  
         ctrlCategory.CategoryRegister);
 
+router.get('/Category/add', 
+        userController.isLogged, 
+        ctrlCategory.ViewRegister);        
+
 router.get('/Category/:code',
         userController.isLoggedApi, 
         ctrlCategory.find);
