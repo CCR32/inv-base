@@ -47,3 +47,8 @@
 8-24-2021 10:16:58 Ejecutando procedimiento.-> call QueryDelete_Category(?) 005='005' 
 8-24-2021 10:17:9 Ejecutando procedimiento.-> call QueryDelete_Category(?) 003='003' 
 8-24-2021 10:17:24 Ejecutando procedimiento.-> call QueryInsert_Category(?,?,?,?) 005='005' Nombre cambiado='Nombre cambiado' Descripcion modificadax='Descripcion modificadax' Larga nueva='Larga nueva' 
+8-24-2021 15:4:40 Ejecutando procedimiento.-> call QueryInsert_subCategory(?,?,?,?) undefined='undefined' undefined='undefined' undefined='undefined' undefined='undefined' undefined='undefined' 
+8-24-2021 15:20:2 Ejecutando procedimiento.-> call QueryInsert_subCategory(?,?,?,?) undefined='undefined' undefined='undefined' undefined='undefined' undefined='undefined' undefined='undefined' 
+8-24-2021 15:21:44 Ejecutando procedimiento.-> call QueryInsert_subCategory(?,?,?,?) undefined='undefined' undefined='undefined' undefined='undefined' undefined='undefined' undefined='undefined' 
+8-24-2021 15:26:22 Ejecutando procedimiento.-> call QueryInsert_subCategory(?,?,?,?,?) undefined='undefined' 002,005='002,005' nombre subcategoria='nombre subcategoria' descripcion subcategoria='descripcion subcategoria' des larga ='des larga ' 
+8-24-2021 15:29:31 Ejecutando procedimiento.-> call QueryInsert_subCategory(?,?,?,?,?) 004='004' 002='002' subcategoria nombre='subcategoria nombre' subcategoria descripcion='subcategoria descripcion' deslarga x ='deslarga x ' 

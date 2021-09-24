@@ -28,7 +28,7 @@ router.get('/Subcategory',
         userController.isLogged,
         ctrlSubcategory.SubcategoryView);
 
-router.get('/Subcategory/:code', 
+router.get('api/Subcategory/:code', 
         userController.isLoggedApi, 
         ctrlSubcategory.find);
 
@@ -36,7 +36,11 @@ router.post('/Subcategory/add',
         userController.isLogged,
         ctrlSubcategory.SubcategoryRegister);
 
-router.post('/Subcategory/delete', 
+router.get('/Subcategory/add', 
+        userController.isLogged,
+        ctrlSubcategory.SubcategoryCreate);
+
+router.post('api/Subcategory/delete', 
         userController.isLogged,
         ctrlSubcategory.SubcategoryDelete);
 

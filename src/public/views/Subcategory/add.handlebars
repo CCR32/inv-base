@@ -1,0 +1,46 @@
+<form action="/Subcategory/add" method="post">
+    <div class="form">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12"> 
+                        <label for="cat-id">Categoria:</label>                  
+                        <select  class="form-control" id="cat-id" name="ccatcode">
+                        {{#if items}}
+                            {{#each items}}
+                                <option value={{code}}>{{code}}.-{{nombreCategoria}}</option>                            
+                            {{/each}}
+                        {{/if}}
+                        </select>
+                    </div>     
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12"> 
+                        <label for="cat-id">SubCategoria:</label>                  
+                        <input type="text" class="form-control" id="scat-id" name="csubcat" >
+                    </div>     
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">                    
+                        <label for="cat-name">Nombre Subcategoria:</label>                  
+                        <input type="text" class="form-control" id="scat-name" name="cname">
+                    </div>     
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <label for="cat-description">Descripcion SubCategoria:</label>                  
+                        <input type="text" class="form-control" id="scat-description" name="cdes">
+                    </div>     
+                </div>          
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <label for="cat-des-large">Descripcion larga:</label>                  
+                        <input type="text" class="form-control" id="scat-des-large" name="clongdes">
+                    </div>     
+                </div>                       
+                <div>           
+                    <button type="submit" id="save-changes" class="btn btn-primary item-s-changes">Guardar</button>
+                    <button type="button" id="cancel-save" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+    </div>          
+</form>
+
+<script type="text/javascript" src="/public/js/app-subcategory-add.js"></script>

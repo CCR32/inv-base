@@ -1,17 +1,19 @@
 
-let appCategoryInstance = null; 
+let appSubCategoryInstance = null; 
 
-class appCategoryCreate{    
+class appSubCategoryCreate{    
     constructor(){          
         this.url = window.origin;           
         this.catid = 
         document.querySelector('#cat-id');
+        this.scatid = 
+        document.querySelector('#scat-id');
         this.name = 
-        document.querySelector('#cat-name');
+        document.querySelector('#scat-name');
         this.description = 
-        document.querySelector('#cat-description');
+        document.querySelector('#scat-description');
         this.large = 
-        document.querySelector('#cat-des-large');        
+        document.querySelector('#scat-des-large');        
         this.saveChanges = 
         document.querySelector('#save-changes');
         this.cancel = 
@@ -23,8 +25,8 @@ class appCategoryCreate{
         }
     }
 
-    refreshCategory(target, category){
-        fetch(this.url +"/Category/" + category)
+    refreshsubCategory(target, category){
+        fetch(this.url +"/Subcategory/" + category)
         .then((response) => response.json())
         .then((json) => {            
                 this.catid = json[0].code;
@@ -36,30 +38,9 @@ class appCategoryCreate{
         
 
     // Guardar una categoria editada.
-    saveCategory(target){        
+    savesubCategory(target){        
         try {
-            this.verifyInputs();
-            fetch(this.url + "/Category/add", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ 
-                    "cCodigo": this.catid.value,   
-                    "cNombreCategoria": this.name.value,
-                    "cDescripcionCategoria":this.description.value,
-                    "cDescripcionLarga": this.large.value   
-                 })
-            }).then(response => {
-                if (response.statusText.includes("OK")) {
-                    alert("Registro actualizado");                        
-                    this.refreshCategory(target, 
-                    this.catid.value)
-                    document.location.href = window.origin+"/Category";
-                }
-            }).catch(error => {
-                alert(error)
-            })
+            this.verifyInputs();         
         } catch (err) {
             alert(err);
         }    
@@ -78,17 +59,17 @@ class appCategoryCreate{
     
     //Cacecelar operación
     cancelSave(target){
-        document.location.href = window.origin+"/Category";
+        document.location.href = window.origin+"/Subcategory";
     }
   
     //Procesar eventos
     processEvents(event){      
         switch(event.target.id){
             case "save-changes":
-                appCategoryInstance.saveCategory(event.target);
+                appSubCategoryInstance.savesubCategory(event.target);
             break;    
             case "cancel-save":
-                appCategoryInstance.cancelSave(event.target);
+                appSubCategoryInstance.cancelSave(event.target);
             break;
         }
     }
@@ -102,8 +83,8 @@ class appCategoryCreate{
 };
 
 window.addEventListener('load', function(event){
-    if (appCategoryInstance == null){
-        appCategoryInstance = new appCategoryCreate();
+    if (appSubCategoryInstance == null){
+        appSubCategoryInstance = new appSubCategoryCreate();
     }
 }, false);
 

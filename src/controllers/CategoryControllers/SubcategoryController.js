@@ -1,17 +1,43 @@
 const Subcategory = require('../../models/Categorys/Subcategory');
+const Category = require('../../models/Categorys/Category');
 const messages = require('../../helpers/messages');
 
 
+
+
+async function SubcategoryCreate(req,res){
+    let category = new Category();   
+    try{
+        let result = await category.get("call QuerySelect_AllCategorys");
+        if (result.result !== null && result.result !== undefined){            
+            if (result.hasOwnProperty("result")){
+                if (result.result.length == 0){
+                    throw new Error(messages.err_cat_not_found);                    
+                }                
+                res.render('Subcategory/add',{items:result.result});
+            } else {
+                throw new Error(messages.err_cat_not_found);
+            }
+        }
+    } catch (e){        
+        res.status(404).json({"error":e.message});
+    }    
+}
+
 async function SubcategoryRegister(req, res) {
+    console.log('Entra dentro de register');
     const subcategory = new Subcategory();     
-    let parameters = [req.body.cSubcategoria, req.body.cCodigo,req.body.cNombreCategoria, 
-        req.body.cDescripcionCategoria,req.body.cDescripcionLarga];                                      
+    let parameters = [req.body.csubcat, 
+                      req.body.ccatcode,
+                      req.body.cname, 
+                      req.body.cdes,
+                      req.body.clongdes];                                      
     try{
         if (parameters instanceof Array){            
-            let result = await  subcategory.create("call QueryInsert_subCategory(?,?,?,?)", parameters);            
+            let result = await  subcategory.create("call QueryInsert_subCategory(?,?,?,?,?)", parameters);            
             if (result != null){                
-                if (result.hasOwnProperty("numberOfResult")){                    
-                    res.status(200).json(result);
+                if (result.hasOwnProperty("numberOfResult")){                                        
+                    res.redirect('/Subcategory');
                 } else {
                     throw new Error(messages.err_subcat_add);
                 }
@@ -97,4 +123,4 @@ async function find(req, res){
 
 }
 
-module.exports = { SubcategoryRegister, SubcategoryDelete, SubcategoryView, SubcategoryList, find };
+module.exports = { SubcategoryRegister, SubcategoryDelete, SubcategoryView, SubcategoryList, find, SubcategoryCreate };
