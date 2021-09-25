@@ -29,7 +29,7 @@ async function logoff(req, res) {
 async function signup(req, res){
     const password = bcrypt.hashSync("pwd0CCAdmin", 10);
     console.log(password);
-    res.render('login/login');
+    res.render('login/login', {AppName:'Nombre Aplicacion'});
 }
 
 const isLogged = (req, res, next) => {
