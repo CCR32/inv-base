@@ -25,7 +25,7 @@ async function SubcategoryCreate(req,res){
 }
 
 async function SubcategoryRegister(req, res) {
-    console.log('Entra dentro de register');
+    //console.log('Entra dentro de register');
     const subcategory = new Subcategory();     
     let parameters = [req.body.csubcat, 
                       req.body.ccatcode,

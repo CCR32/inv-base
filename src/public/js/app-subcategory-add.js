@@ -24,25 +24,14 @@ class appSubCategoryCreate{
             this.addListenersClick(this.cancel);
         }
     }
-
-    refreshsubCategory(target, category){
-        fetch(this.url +"/Subcategory/" + category)
-        .then((response) => response.json())
-        .then((json) => {            
-                this.catid = json[0].code;
-                this.name.value = json[0].nombreCategoria;                         
-                this.description.value = json[0].descripcionCategoria;
-                this.large.value = json[0].descripcionLarga;
-        })
-    }
-        
-
+    
     // Guardar una categoria editada.
-    savesubCategory(target){        
+    savesubCategory(target,event){        
         try {
             this.verifyInputs();         
         } catch (err) {
             alert(err);
+            event.preventDefault();
         }    
     }
     //Verificar entrada de datos
@@ -66,7 +55,7 @@ class appSubCategoryCreate{
     processEvents(event){      
         switch(event.target.id){
             case "save-changes":
-                appSubCategoryInstance.savesubCategory(event.target);
+                appSubCategoryInstance.savesubCategory(event.target,event);
             break;    
             case "cancel-save":
                 appSubCategoryInstance.cancelSave(event.target);

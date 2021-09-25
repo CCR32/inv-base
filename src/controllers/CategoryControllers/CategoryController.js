@@ -66,7 +66,25 @@ async function CategoryList(req, res) {
     }
 }
 
-
+/* Lista de categorias para api */
+async function list(req, res) {    
+    let category = new Category();   
+    try{
+        let result = await category.get("call QuerySelect_AllCategorys");
+        if (result.result !== null && result.result !== undefined){            
+            if (result.hasOwnProperty("result")){
+                if (result.result.length == 0){
+                    throw new Error(messages.err_cat_not_found);                    
+                }                
+                res.status(200).json({items:result.result});
+            } else {
+                throw new Error(messages.err_cat_not_found);
+            }
+        }
+    } catch (e){        
+        res.status(404).json({"error":e.message});
+    }
+}
 
 /* Lista de categorias para api */
 async function find(req, res) {
@@ -91,4 +109,4 @@ async function find(req, res) {
 
 
 
-module.exports = { CategoryRegister, CategoryDelete,  CategoryList,find, ViewRegister};
+module.exports = { CategoryRegister, CategoryDelete,  CategoryList,find, ViewRegister, list};

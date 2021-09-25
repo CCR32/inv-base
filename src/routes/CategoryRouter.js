@@ -24,11 +24,15 @@ router.get('/Category',
         userController.isLogged, 
         ctrlCategory.CategoryList);
 
+router.get('/api/Category/list', 
+        userController.isLoggedApi, 
+        ctrlCategory.list);
+
 router.get('/Subcategory', 
         userController.isLogged,
         ctrlSubcategory.SubcategoryView);
 
-router.get('api/Subcategory/:code', 
+router.get('/api/Subcategory/:code', 
         userController.isLoggedApi, 
         ctrlSubcategory.find);
 
@@ -40,7 +44,7 @@ router.get('/Subcategory/add',
         userController.isLogged,
         ctrlSubcategory.SubcategoryCreate);
 
-router.post('api/Subcategory/delete', 
+router.post('/api/Subcategory/delete', 
         userController.isLogged,
         ctrlSubcategory.SubcategoryDelete);
 
