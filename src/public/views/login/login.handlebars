@@ -1,4 +1,4 @@
-
+<div class="wrapper-container">
 <div  class="login-form">
     <span class="login-title">{{AppName}}.- Acceso al sistema</span>    
     <span>Ingrese usuario y contraseña</span>
@@ -6,14 +6,26 @@
     {{#if errmessage}}
         <h2>errmessage</h2>
     {{/if}}
-    <ul class="login-list">
-        <li><input type="text" class="form-control" maxlength="128" placeholder="Usuario" id="username" name="username"/></li>
-        <li><input type="password" class="form-control" maxlength="128" placeholder="Contraseña" id="password" name="password"/></li>
-        <li><button  class="form-control">Iniciar sesión</button></li>
-        <li><span class="pwd-span">Recuperar contraseña</span></li>        
-    </ul>            
+    <div class="container-input">        
+        <div class="x-title">
+            <label for="username" class="title">Usuario:</label>
+        </div>
+        <div class="x-form">            
+            <input id="username" name="username" type="text" class="input-login">        
+        </div>                
+        <div class="x-title">
+            <label for="password" class="title">Contrasena:</label>
+        </div>
+        <div class="x-form">            
+            <input id="password" name="password" type="password" class="input-login">        
+        </div>            
+    </div>
+    <div class="container-input-button">
+        <div class="x-buttons">
+            <button type="submit" class="form-control">Iniciar sesión</button>        
+            <span class="pwd-span">Recuperar contraseña</span>
+        </div>                    
+    </div>
 </form>
 </div>
-
-
-
+</div>
