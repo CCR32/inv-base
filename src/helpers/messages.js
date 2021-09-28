@@ -12,6 +12,9 @@ const  messages = {
 
     /*Mensajes para categorias*/
     err_cat_not_found: "Categoria no se encuentra en listado de categorias", 
-    err_cat_add: "Error al agregar categoria"
+    err_cat_add: "Error al agregar categoria",
+
+    err_perm_not_found:"Permisos no definidos para este usuario"
+
 };
 module.exports = messages;

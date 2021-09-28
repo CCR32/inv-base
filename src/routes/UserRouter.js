@@ -5,6 +5,7 @@ const productCtrl = require('../controllers/ProductsControllers/ProductControlle
 router.post('/login', loginCtrl.login);
 router.post('/logoff', loginCtrl.logoff);
 router.get('/login', loginCtrl.signup);
+router.post('/permissions', loginCtrl.permissions);
 
 
 module.exports = router;
