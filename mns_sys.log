@@ -58,3 +58,4 @@
 8-24-2021 15:49:4 Ejecutando procedimiento.-> call QueryInsert_subCategory(?,?,?,?,?) 009='009' 004='004' nombre subcategoria='nombre subcategoria' descripcion subcategoria='descripcion subcategoria' deslarga x ='deslarga x ' 
 8-24-2021 17:58:31 Ejecutando procedimiento.-> call QueryDelete_subCategory(?) 004='004' 
 8-24-2021 17:58:37 Ejecutando procedimiento.-> call QueryDelete_subCategory(?) ='' 
+8-27-2021 12:23:22 Ejecutando procedimiento.-> call QueryInsert_Category(?,?,?,?) 002='002' Nombre cambiado='Nombre cambiado' Descripcion modificada='Descripcion modificada' Larga nueva='Larga nueva' 

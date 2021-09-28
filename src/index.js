@@ -10,9 +10,12 @@ const routerIndex = require('../src/routes/UserRouter');
 const routerProudcts = require('../src/routes/ProductRouter');
 const routerInventory = require('../src/routes/InventoryRouter');
 const routerCatgegory = require('../src/routes/CategoryRouter');
+
+
+
 /*view engine*/
 app.engine('handlebars', exphbs({
-    partialsDir: path.join(__dirname, 'views/partials')
+partialsDir: path.join(__dirname, 'views/partials')
 }));
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'public/views'));

@@ -50,16 +50,24 @@ body{
     padding: 0;
 }
 .wrapper{
-    width: 98%; 
+    width: 98%;
     margin: 1%;
-    height: 98%;
-    background-color:#fff;
+    height: 95vh;
+    background-color: #eee9e9;
+}
+.open-drawer{
+    width: 78%;
+    margin-left:21%;
 }
 .wrapper-container{
     padding-top:30px;
     background-color: #313030;
     width:100%;
     height: 100vh;
+    background-image:url("/public/img/background.jpg");
+}
+.selected{
+    border-left: 2px solid white;
 }
 @media screen and (min-height:768px) {
     .wrapper{
@@ -106,10 +114,11 @@ body{
     display:inline-block;
     width: 100%; 
     height: 40px;
-    margin-left: 2px;
+    /*margin-left: 2px;*/
     background-color:rgba(100,100,100,1);
+    
     position:relative;
-    border:none;
+    border-style:none;
     color:#fff;
 }
 .x-form{    
@@ -141,5 +150,111 @@ body{
     text-align: start;
     width: 90%;
     margin: 0 auto;
+    color:#fff;    
+}
+
+.title{
+    margin-top: 10px;
+    font-size:14px;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+#input{
+    background:rgba(100, 100,100,0.5) !important;
+}
+
+.container-menu{
+    width: 20%; 
+    height: 100vh;
+    background-color:#343a40;    
+    position:absolute;
+    z-index: 1000;
+    color: #fff;
+}
+.closed-menu{
+    width: 0%;
+    display: none;
+}
+
+
+.item{
+    display:block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 12px;
+    width: 100%;
+    text-align: start;
+    margin-left: 20px;
+    padding-top:10px;
+}
+.menu-item{
+    margin-top:5px;
+    height: 40px;
+    cursor: pointer;
+}
+.menu-item:hover{
+    background-color:rgba(100, 100,100,0.5);
+}
+
+.nav-header{
+    height: 50px;
+    background-color: #1c1c1d;
+    display:flex;
+
+}
+.header-title{
+    width: 20%; 
+    height: 100%;
+    background-color: #1c1c1d;
+}
+.header-search{
+    width: 25%; 
+    height: 100%;
+    
+}
+.img-menu{
+    float:right;
+}
+.sp-title{
+    display: block;
+    padding-top: 10px;
+    color: #fff;
+    margin-left: 10px;
+}
+.text-search{
+    width: 90%;
+    height: 90%;
+    margin-top: 4px;
+    background:transparent;
+    border:none;
+    border-bottom:2px solid white;
+    color:#fff;
+    margin-left:15px;
+}
+
+.user-interation{
+    width: 54%;
+    height: 100%;    
+    background-color :#1c1c1d;
+}
+.user-profile{
+    width: 40px; 
+    height: 80%;
+    border: 2px solid white;
+    margin-top:5px;
+    float:right;
+    border-radius:20px;
+    
+}
+.user-info{
+
+    height: 80%;    
+    margin-top:10px;
+    margin-left: 5px;
+    float:right;
+    
+}
+.user-info>span{
     color:#fff;
 }

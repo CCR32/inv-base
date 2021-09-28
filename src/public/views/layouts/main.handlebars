@@ -6,13 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/public/css/bootstrap.css">
-    <link rel="stylesheet" href="/public/css/app/main.css">
+    <link rel="stylesheet" href="/public/css/app/main.css">    
     
 </head>
-<body>   
-<!--    <div class="wrapper"> -->
-        {{{body}}}
-    <!--</div>-->
+<body>       
+        {{#if AppName }} 
+                {{{body}}}            
+            {{else}} 
+            <div class="nav-header">
+                <div class="header-title">
+                    <div class="title-app">
+                        <div class="menu-icon">
+                            <img src="/public/img/hamburger.png" alt="" class="img-menu">
+                        </div>
+                        <span class="sp-title">@AppName</span>                            
+                    </div>                    
+                </div>
+                <div class="header-search">
+                    <input type="text" class="text-search" id="search-text" placeholder="Buscar">
+                </div>
+                <div class="user-interation">
+                    <div class="user-info">
+                        <span>##profile info username</span>
+                    </div>           
+                    <div class="user-profile">                        
+                    </div>
+                             
+                </div>
+            </div>
+            
+            <div class="container-menu closed-menu">
+                <div class="menu-item"><span class="item">Elemento 01</span></div>
+                <div class="menu-item"><span class="item">Elemento 02</span></div>
+                <div class="menu-item"><span class="item">Elemento 03</span></div>
+                <div class="menu-item"><span class="item">Elemento 04</span></div>
+                <div class="menu-item"><span class="item">Elemento 05</span></div>
+            </div>            
+                        
+            <div class="wrapper"> 
+                {{{body}}}
+            </div>
+        {{/if}}
     
     <script type="text/javascript" src="/public/js/jquery.js"></script>
     <script type="text/javascript" src="/public/js/popper.js"></script>
