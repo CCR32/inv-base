@@ -82,7 +82,10 @@ function createComponent(json){
     }
 }
 
-
+async function dashboard(req, res){    
+    res.render('Dashboard/index',{ username:req.user[0]});
+    
+}
 
 async function options(req, res){
     let user = new User();        
@@ -170,4 +173,4 @@ const isLoggedApi = (req, res, next) => {
     }
     res.status(200).json({error:"Loggin is required"});
 }
-module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options};
+module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard};

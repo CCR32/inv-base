@@ -69,22 +69,6 @@ body{
 .selected{
     border-left: 4px solid #a8640c;
 }
-@media screen and (min-height:768px) {
-    .wrapper{
-        height: 760px;
-    }   
-}
-@media screen and (min-height: 800px){
-    .wrapper{
-        height: 790px;
-    }   
-}
-
-@media screen and (min-height: 960px){
-    .wrapper{
-        height: 950px;
-    }   
-}
 
 .input-container{
     padding-left:10%;    
@@ -217,7 +201,7 @@ body{
     border-bottom: 2px solid white;    
     border: 1px solid white;
     border-radius: 10px;
-    height: 90%;
+    height: 85%;
     margin-top: 2px;
     margin-left: 5px;
 
@@ -388,9 +372,125 @@ body{
     float:right;
     margin-right: 10px;
 }
+
 .menu-path{
     display: inline-block;
     padding-top: 10px;
     padding-left: 10px;
 
+}
+.container-settings{
+    width: 20%;
+    height: 20vh;
+    background-color: #0b354f;
+    z-index: 10000;
+    position: absolute;
+    margin-left: 80%;
+    border-bottom-left-radius: 10px;
+    border-top: 1px solid white;
+    color:#fff;
+}
+.closed-settings{
+    display: none;
+}
+
+
+
+@media screen and (min-height:768px) {
+    .wrapper{
+        height: 760px;
+    }   
+}
+@media screen and (min-height: 800px){
+    .wrapper{
+        height: 790px;
+    }   
+}
+
+@media screen and (min-height: 960px){
+    .wrapper{
+        height: 950px;
+    }   
+}
+
+
+@media screen and (min-width: 500px){
+    .container-settings{
+        width: 100%;
+        margin-left: 0%;
+    }   
+}
+
+
+.dashboard-container{
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    padding-top:10px;
+}
+.dashboard-item{
+    width: 98%;    
+    height: 44vh;    
+    display: inline-block;
+    border-radius: 10px;
+    margin-left: 1%;
+}
+
+.rounded-indicator{
+    width: 48%;
+    height: 98%;
+    background-color:rgb(94, 84, 84);
+}
+
+.rounded-indicator-right{
+    width: 48%;
+    height: 98%;
+    background-color: #fff;
+    border-radius:10px;
+    float:right;
+}
+.rounded-indicator-left{
+    width: 48%;
+    height: 98%;
+    background-color: #fff;
+    border-radius:10px;
+    float:left;
+}
+
+.rounded-indicator-full{
+    width: 100%;
+    height: 98%;
+    background-color: #fff;
+    border-radius:10px;
+    float:left;
+}
+
+.indicator-header{
+    width:100%;
+    height: 35px;
+    background-color: rgba(0, 0,0,0.8);
+}
+
+.img-close{
+    width: 22px;
+    height: 22px;
+    float:right;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+.c-item-ind{
+    text-align: center;
+    margin:0 auto;
+    padding-top:20px;
+}
+.item-indicator{
+    display: flex;
+}
+
+.title-class-indicator{
+    color: #fff;
+    font-family: arial;
+    font-weight: bold;
+    padding:4px;
 }

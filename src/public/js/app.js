@@ -7,6 +7,7 @@ class MenuDrawer{
         this.containerMenu = document.querySelector('.container-menu');
         this.finder = document.querySelector('.wrapper-search');
         this.path = document.querySelector('.menu-url');        
+        this.dropUser = document.querySelector('.container-settings');
         this.statusDrawer = "open";
         this.RequestMenu();
     }  
@@ -110,11 +111,19 @@ class MenuDrawer{
     }
     CloseFinder(item, event){
         this.finder.className = "wrapper-search search-hidden";
+        
     }
 
 
     ShowSettings(item, event){
-        alert('clicked on settings button');
+        //alert('clicked on settings button');
+        if (this.dropUser !=  null){
+            if (this.dropUser.className.indexOf('closed-settings')!=-1){
+                this.dropUser.className ="container-settings"
+            } else {
+                this.dropUser.className ="container-settings closed-settings"
+            }            
+        }        
     }
 
 

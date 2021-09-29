@@ -6,6 +6,7 @@ const messages = require('../../helpers/messages');
 async function ViewRegister(req,res){
     res.render('Category/add',{ username:req.user[0]});
 }
+
 async function CategoryRegister(req, res) {
     const category = new Category();     
     let parameters = [req.body.cCodigo, req.body.cNombreCategoria, req.body.cDescripcionCategoria,
