@@ -4,6 +4,8 @@ GET http://localhost:3000/products/list
 ### GET Obtener producto especifico
 GET http://localhost:3000/products/list
 
+GET http://localhost:3000/products/0000000001001
+
 ### Insertar un registro 
 POST http://localhost:3000/products/delete
 Content-Type: application/json
@@ -18,7 +20,7 @@ POST http://localhost:3000/products/add
 Content-Type: application/json 
 
 {
-   "cCodigo":"07501020218000",
+   "cCodigo":"9750102021800",
    "cDescripcion": "Prueba artìculo",
    "cCategoria":"01",
    "cSubcategoria":"02",
@@ -27,4 +29,80 @@ Content-Type: application/json
    "cTipoPrecio":"N",
    "cEstado":1,
    "iTipoObjeto":1
+}
+
+
+GET http://localhost:3000/products/list
+
+
+GET http://localhost:3000/Inventory
+
+
+GET http://localhost:3000/Inventory/000000000002
+
+
+
+POST http://localhost:3000/Inventory/add 
+Content-Type: application/json
+
+{
+   "cSucursal": "00000001",
+    "cCode": "000000000003",
+    "dExistencia": 20,
+    "dStock": 25
+}
+
+
+POST http://localhost:3000/Inventory/delete
+Content-Type: application/json
+
+{   
+    "cCode": "000000000003"    
+}
+
+GET http://localhost:3000/Category
+
+GET http://localhost:3000/Category/001
+
+GET http://localhost:3000/Category/002
+
+
+
+
+POST http://localhost:3000/Category/add 
+Content-Type: application/json
+
+{
+   "cCodigo": "002",   
+    "cNombreCategoria": "Categoria de prueba",
+    "cDescripcionCategoria":"Descripcion normal",
+    "cDescripcionLarga": "Categoria de prueba descripciòn larga"    
+}
+
+
+
+
+POST http://localhost:3000/Category/delete
+Content-Type: application/json
+
+{
+   "cCode": "001"       
+}
+
+
+
+GET http://localhost:3000/Subcategory
+
+GET http://localhost:3000/Subcategory/001
+
+GET http://localhost:3000/Category/002
+
+
+
+
+POST http://localhost:3000/Subcategory/delete
+Content-Type: application/json
+
+{
+   "cCode": "001"       
 }

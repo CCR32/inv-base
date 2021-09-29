@@ -79,7 +79,7 @@ class MenuDrawer{
             (event.target.className.indexOf("item") != -1)){
             drawerManger.SelectMenuItem(event.target, event);
             return;
-        }
+        }        
         if (drawerManger.statusDrawer == "closed"){
             drawerManger.OpenDrawer();
             return;
@@ -99,7 +99,29 @@ class MenuDrawer{
     ShowSettings(item, event){
         alert('clicked on settings button');
     }
-
+    BindItemSubmenu(container, item, event){
+        if (container != null){
+            if (document.URL.indexOf('login') == -1){            
+                try {
+                    fetch(window.location.origin + "/options", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ "cData": item.getAttribute('data') })
+                    }).then(response => response.json())
+                    .then((json)=>{                    
+                        container.innerHTML = json;
+                    })
+                    .catch((e)=>{
+                        throw new Error(e);
+                    })                
+                }catch(e){
+                    alert(e);
+                }
+            }
+        }
+    }
 
     SelectMenuItem(item, event){    
         if (item.className.indexOf("child") == -1){    
@@ -110,6 +132,7 @@ class MenuDrawer{
         if (item.className.indexOf("child") != -1){
             this.path.innerHTML = `>${item.innerHTML}`;
             this.finder.className="wrapper-search search-show"
+            this.BindItemSubmenu(this.finder,item, event);            
         }
         if (item.className == "menu-item"){      
             this.path.innerHTML = item.innerHTML;      

@@ -4,8 +4,6 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
 
-
-
 Array.prototype.search = function(item){
     let quantity =0;
     for(var i in this){
@@ -16,6 +14,22 @@ Array.prototype.search = function(item){
     return quantity;
   }
 
+
+function createComponentOptions(json){
+    let htmlItem = "";    
+    if (json instanceof Object){
+        for(var item in json){
+            if(json[item] != null && json[item]!= undefined){
+                let data = `<div class="option-found">
+                                <span data=${json[item].url}>${json[item].url}</span>
+                            </div>`;
+                htmlItem+= data;
+            }
+        }
+        console.log(htmlItem);
+        return htmlItem;
+    }
+}
 function createComponent(json){
     let htmlItem = ""; 
     let headers = [];
@@ -36,7 +50,7 @@ function createComponent(json){
                         </div>`;
                                           
                         let child = 
-                        `<div class="child menu-item-c child-closed" target=${json[item].cvemodulo}>
+                        `<div class="child menu-item-c child-closed" data=${json[item].nombre} target=${json[item].cvemodulo}>
                             <span class="child item-c">${json[item].nombre}</span>                                            
                         </div>`;                                       
                         if (headers.search(json[item].cvemodulo)==0){
@@ -52,6 +66,32 @@ function createComponent(json){
         }catch(e){
             console.log(e.message);
         }        
+    }
+}
+
+
+
+async function options(req, res){
+    let user = new User();        
+    if (req.isAuthenticated()){
+        if (req.user[0].usrinterno == undefined)        
+            throw new Error("user_error");
+        let parameters = [req.user[0].usrinterno, req.body.cData];  
+        console.log('with parameters:' + parameters);          
+        try{
+            let result = await user.get("call QrySelect_OptionsXModule(?,?)", parameters);                    
+            if (result.result !== null && result.result !== undefined){            
+                if (result.hasOwnProperty("result")){
+                    if (result.result.length == 0)
+                        throw new Error(messages.err_perm_not_found);    
+                     res.status(200).json(createComponentOptions(result.result));                      
+                } else {
+                    throw new Error(messages.err_perm_not_found);
+                }
+            }
+        } catch (e){        
+            res.status(404).json({"error":e.message});
+        }
     }
 }
 
@@ -117,4 +157,4 @@ const isLoggedApi = (req, res, next) => {
     }
     res.status(200).json({error:"Loggin is required"});
 }
-module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions };
+module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options};
