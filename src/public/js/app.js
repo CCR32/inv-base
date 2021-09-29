@@ -8,29 +8,60 @@ class MenuDrawer{
         this.finder = document.querySelector('.wrapper-search');
         this.path = document.querySelector('.menu-url');
         this.statusDrawer = "open";
-        // Menu
-        this.items = document.querySelectorAll('.menu-item');
-        // Botón de configuración
-        this.settings = document.querySelector('.img-settings');
-        // Sub menu 
-        this.childs = document.querySelectorAll('.menu-item-c');
-        this.closefinder = document.querySelector('.close-x-finder');
-        
-        if (this.wrapper != null){              
-            if (this.buttonMenu != null){
-                this.buttonMenu.addEventListener('click', this.ProcessEvents, false);
-            }              
-            if (this.items != null){
-                this.containerMenu.addEventListener('click', this.ProcessEvents, false);
-            }
-            if (this.settings != null){
-                this.settings.addEventListener('click', this.ProcessEvents, false);
-            }            
-            if (this.closefinder != null){
-                this.closefinder.addEventListener('click', this.ProcessEvents, false);
+        this.RequestMenu();
+    }  
+
+    BindItems(data){
+            console.log(data);
+            this.containerMenu.innerHTML = data;
+            // Menu
+            this.items = document.querySelectorAll('.menu-item');
+            // Botón de configuración
+            this.settings = document.querySelector('.img-settings');
+            // Sub menu 
+            this.childs = document.querySelectorAll('.menu-item-c');
+            // Buscador
+            this.closefinder = document.querySelector('.close-x-finder');
+            
+            if (this.wrapper != null){              
+                if (this.buttonMenu != null){
+                    this.buttonMenu.addEventListener('click', this.ProcessEvents, false);
+                }              
+                if (this.items != null){
+                    this.containerMenu.addEventListener('click', this.ProcessEvents, false);
+                }
+                if (this.settings != null){
+                    this.settings.addEventListener('click', this.ProcessEvents, false);
+                }            
+                if (this.closefinder != null){
+                    this.closefinder.addEventListener('click', this.ProcessEvents, false);
+                }
             }
         }
-    }  
+
+
+    RequestMenu(){
+        if (document.URL.indexOf('login') == -1){            
+            try {
+                fetch(window.location.origin + "/permissions", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ "cCode": 'data' })
+                }).then(response => response.json())
+                .then((json)=>{                    
+                    this.BindItems(json);
+                })
+                .catch((e)=>{
+                    throw new Error(e);
+                })                
+            }catch(e){
+                alert(e);
+            }
+        }
+    }
+
 
     ProcessEvents(event){
         if (event.target.className.indexOf('close-x-finder')!=-1){
@@ -58,12 +89,18 @@ class MenuDrawer{
             return;
         }        
     }
+
+
     CloseFinder(item, event){
         this.finder.className = "wrapper-search search-hidden";
     }
+
+
     ShowSettings(item, event){
         alert('clicked on settings button');
     }
+
+
     SelectMenuItem(item, event){    
         if (item.className.indexOf("child") == -1){    
             this.items.forEach((item)=>{            
@@ -113,6 +150,8 @@ class MenuDrawer{
             });          
         }
     }
+
+
     OpenDrawer(){
          if(this.statusDrawer.indexOf("closed")!= -1) {
         this.statusDrawer = "open";
@@ -120,6 +159,8 @@ class MenuDrawer{
         this.containerMenu.className = "container-menu";          
       }
     }
+
+
     CloseDrawer(){
       if (this.statusDrawer.indexOf("open") != -1){
         this.statusDrawer = "closed"

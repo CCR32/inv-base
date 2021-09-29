@@ -5,17 +5,69 @@ const passport = require('passport');
 
 
 
+
+Array.prototype.search = function(item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }
+
+function createComponent(json){
+    let htmlItem = ""; 
+    let headers = [];
+    if (json instanceof Object){   
+        try{     
+            for(var item in json){                            
+                //if (headers.filter((temp)=>
+                //{return temp.cvemodulo == json[item].cvemodulo}).length == 0){                                                                                           
+                    if (json[item] != undefined && json[item] != null){
+                        if (json[item].cvemodulo == null || json[item].cvemodulo == undefined)
+                            continue;
+                        let parent = 
+                        `<div class="menu-item" target="${json[item].cvemodulo}">
+                            <span class="item" target="${json[item].cvemodulo}">${json[item].modulo}</span>                        
+                            <div class="container-image">
+                                <img src="/public/img/down.png" class="image-item"></img>
+                            </div>                    
+                        </div>`;
+                                          
+                        let child = 
+                        `<div class="child menu-item-c child-closed" target=${json[item].cvemodulo}>
+                            <span class="child item-c">${json[item].nombre}</span>                                            
+                        </div>`;                                       
+                        if (headers.search(json[item].cvemodulo)==0){
+                            htmlItem +=  parent + child;
+                        } else {
+                            htmlItem+= child;                                                                
+                        }
+                        headers.push(json[item].cvemodulo);      
+                    }                                        
+                //}
+            }            
+            return htmlItem;            
+        }catch(e){
+            console.log(e.message);
+        }        
+    }
+}
+
 async function permissions(req, res){
-    const user = new User();    
+    let user = new User();        
     if (req.isAuthenticated()){
-        let parameters = [req.user.username];
+        if (req.user[0].usrinterno == undefined)        
+            throw new Error("user_error");
+        let parameters = [req.user[0].usrinterno];            
         try{
-            let result = await User.find("call QrySelect_UserPerm(?)", parameters);        
+            let result = await user.get("call QrySelect_UserPerm(?)", parameters);                    
             if (result.result !== null && result.result !== undefined){            
                 if (result.hasOwnProperty("result")){
                     if (result.result.length == 0)
                         throw new Error(messages.err_perm_not_found);    
-                    res.status(200).json(result.result);        
+                     res.status(200).json(createComponent(result.result));                      
                 } else {
                     throw new Error(messages.err_perm_not_found);
                 }
