@@ -6,7 +6,7 @@ class MenuDrawer{
         this.buttonMenu = document.querySelector('.img-menu');
         this.containerMenu = document.querySelector('.container-menu');
         this.finder = document.querySelector('.wrapper-search');
-        this.path = document.querySelector('.menu-url');
+        this.path = document.querySelector('.menu-url');        
         this.statusDrawer = "open";
         this.RequestMenu();
     }  
@@ -25,16 +25,24 @@ class MenuDrawer{
             
             if (this.wrapper != null){              
                 if (this.buttonMenu != null){
-                    this.buttonMenu.addEventListener('click', this.ProcessEvents, false);
+                    this.buttonMenu.addEventListener('click', 
+                    this.ProcessEvents, false);
                 }              
                 if (this.items != null){
-                    this.containerMenu.addEventListener('click', this.ProcessEvents, false);
+                    this.containerMenu.addEventListener('click', 
+                    this.ProcessEvents, false);
                 }
                 if (this.settings != null){
-                    this.settings.addEventListener('click', this.ProcessEvents, false);
+                    this.settings.addEventListener('click', 
+                    this.ProcessEvents, false);
                 }            
                 if (this.closefinder != null){
-                    this.closefinder.addEventListener('click', this.ProcessEvents, false);
+                    this.closefinder.addEventListener('click', 
+                    this.ProcessEvents, false);
+                }
+                if (this.finder != null){
+                    this.finder.addEventListener('click',   
+                    this.ProcessEvents, false);
                 }
             }
         }
@@ -45,9 +53,7 @@ class MenuDrawer{
             try {
                 fetch(window.location.origin + "/permissions", {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({ "cCode": 'data' })
                 }).then(response => response.json())
                 .then((json)=>{                    
@@ -64,6 +70,10 @@ class MenuDrawer{
 
 
     ProcessEvents(event){
+        if (event.target.className.indexOf('s-link')!=-1){
+            drawerManger.OpenUrl(event.target, event);
+            return;
+        }
         if (event.target.className.indexOf('close-x-finder')!=-1){
             drawerManger.CloseFinder(event.target, event);
             return;
@@ -91,6 +101,13 @@ class MenuDrawer{
     }
 
 
+    OpenUrl(item, event){
+        if (item != null){
+            if (item.getAttribute('data') != undefined){                
+                document.location.href = window.origin + item.getAttribute('data');
+            }
+        }
+    }
     CloseFinder(item, event){
         this.finder.className = "wrapper-search search-hidden";
     }
@@ -99,15 +116,15 @@ class MenuDrawer{
     ShowSettings(item, event){
         alert('clicked on settings button');
     }
+
+
     BindItemSubmenu(container, item, event){
         if (container != null){
             if (document.URL.indexOf('login') == -1){            
                 try {
                     fetch(window.location.origin + "/options", {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
+                        headers: {'Content-Type': 'application/json'},
                         body: JSON.stringify({ "cData": item.getAttribute('data') })
                     }).then(response => response.json())
                     .then((json)=>{                    

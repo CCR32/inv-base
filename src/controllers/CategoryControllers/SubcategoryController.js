@@ -14,7 +14,7 @@ async function SubcategoryCreate(req,res){
                 if (result.result.length == 0){
                     throw new Error(messages.err_cat_not_found);                    
                 }                
-                res.render('Subcategory/add',{items:result.result});
+                res.render('Subcategory/add',{items:result.result,username:req.user[0]});
             } else {
                 throw new Error(messages.err_cat_not_found);
             }
@@ -75,7 +75,7 @@ async function SubcategoryView(req,res){
                 if (result.result.length == 0)
                     throw new Error(messages.err_cat_not_found);    
                 //res.status(200).json(result.result);                                    
-                res.render('Subcategory/index', {items:result.result});
+                res.render('Subcategory/index', {items:result.result,username:req.user[0]});
             } else {
                 throw new Error(messages.err_cat_not_found);
             }

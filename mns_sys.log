@@ -59,3 +59,20 @@
 8-24-2021 17:58:31 Ejecutando procedimiento.-> call QueryDelete_subCategory(?) 004='004' 
 8-24-2021 17:58:37 Ejecutando procedimiento.-> call QueryDelete_subCategory(?) ='' 
 8-27-2021 12:23:22 Ejecutando procedimiento.-> call QueryInsert_Category(?,?,?,?) 002='002' Nombre cambiado='Nombre cambiado' Descripcion modificada='Descripcion modificada' Larga nueva='Larga nueva' 
+8-29-2021 10:47:39 Ejecutando procedimiento.-> call QueryDelete_Category(?) ='' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 

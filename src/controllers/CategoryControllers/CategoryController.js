@@ -4,7 +4,7 @@ const messages = require('../../helpers/messages');
 
 
 async function ViewRegister(req,res){
-    res.render('Category/add');
+    res.render('Category/add',{ username:req.user[0]});
 }
 async function CategoryRegister(req, res) {
     const category = new Category();     
@@ -56,7 +56,7 @@ async function CategoryList(req, res) {
                 if (result.result.length == 0){
                     throw new Error(messages.err_cat_not_found);                    
                 }                
-                res.render('Category/index',{items:result.result});
+                res.render('Category/index',{items:result.result, username:req.user[0]});
             } else {
                 throw new Error(messages.err_cat_not_found);
             }

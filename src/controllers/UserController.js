@@ -17,22 +17,35 @@ Array.prototype.search = function(item){
 
 function createComponentOptions(json){
     let htmlItem = "";    
+    let header =    `<div class="wrapper-search search-hidden">   
+                        <div class="search-header">
+                            <div class="menu-path">
+                                <span class="menu-url">Ubicacion actual: @@url</span>
+                            </div>
+                            <div class="close-finder">
+                                <img class="close-x-finder" src="/public/img/close.png" alt="">
+                            </div>
+                        </div>                   
+                    </div>`;    
     if (json instanceof Object){
         for(var item in json){
+            
             if(json[item] != null && json[item]!= undefined){
+                if (json[item].url == undefined || json[item].url == undefined ) break;
                 let data = `<div class="option-found">
-                                <span data=${json[item].url}>${json[item].url}</span>
+                                <span class='s-link' data=${json[item].url}>${json[item].descripcion}</span>
                             </div>`;
                 htmlItem+= data;
             }
         }
-        console.log(htmlItem);
-        return htmlItem;
+        console.log('wrapper:' + header + htmlItem);
+        return header + htmlItem;
     }
 }
 function createComponent(json){
-    let htmlItem = ""; 
     let headers = [];
+    let htmlItem = "";     
+        
     if (json instanceof Object){   
         try{     
             for(var item in json){                            

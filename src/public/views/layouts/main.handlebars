@@ -30,7 +30,11 @@
                 </div>
                 <div class="user-interation">
                     <div class="user-info">
-                        <span>##profile info username</span>
+                        {{#if username}}
+                                <span>{{username.usrinterno}}</span>
+                       {{else}}
+                                <span>##username.- options</span>
+                        {{/if}}
                     </div>           
                     <div class="user-profile">      
                         <img src="/public/img/background.jpg" alt=""  >                  
@@ -43,66 +47,7 @@
             </div>
             
             <div class="container-menu closed-menu">
-                <!--
-                <div class="menu-item" target="x-target">
-                        <span class="item" target="x-target">Administración</span>                        
-                    <div class="container-image">
-                        <img src="/public/img/down.png" class="image-item"></img>
-                    </div>                    
-                </div>
-
-                <div class="child menu-item-c child-closed" target="x-target">
-                        <span class="child item-c">Categorias</span>                                            
-                </div>
-                <div class="child menu-item-c child-closed" target="x-target">
-                        <span class="child item-c">SubCategorias</span>                                            
-                </div>
-                <div class="child menu-item-c child-closed" target="x-target">
-                        <span class="child item-c">Productos</span>                                            
-                </div>
-                <div class="child menu-item-c child-closed" target="x-target">
-                        <span class="child item-c">Provedores</span>                                            
-                </div>
-                <div class="child menu-item-c child-closed" target="x-target">
-                        <span class="child item-c">Sucursales</span>                                            
-                </div>
-                <div class="child menu-item-c child-closed" target="x-target">
-                        <span class="child item-c">Licencia</span>                                            
-                </div>
-                <div class="child menu-item-c child-closed" target="x-target">
-                        <span class="child item-c">Usuarios</span>                                            
-                </div>
-              
-                <div class="menu-item" target="x-target2">
-                    <span class="item" target="x-target2">Operacion</span>
-                    <div class="container-image">
-                        <img src="/public/img/down.png" class="image-item"></img>
-                    </div>                    
-                </div>
-
-                <div class="child menu-item-c child-closed" target="x-target2">
-                        <span class="child item-c">Entradas</span>                                            
-                </div>
-                <div class="child menu-item-c child-closed" target="x-target2">
-                        <span class="child item-c">Salidas</span>                                            
-                </div>
-                <div class="child menu-item-c child-closed" target="x-target2">
-                        <span class="child item-c">Complementos</span>                                            
-                </div>
-
-                <div class="menu-item">
-                    <span class="item">Ventas</span>                    
-                    <div class="container-image">
-                        <img src="/public/img/down.png" class="image-item"></img>
-                    </div>                    
-                </div>
-                <div class="menu-item">
-                    <span class="item">Reportes</span>
-                    <div class="container-image">
-                        <img src="/public/img/down.png" class="image-item"></img>
-                    </div>                    
-                </div>
-                -->
+            
              
             </div>            
             <div class="wrapper-search search-hidden">   
@@ -113,33 +58,7 @@
                     <div class="close-finder">
                         <img class="close-x-finder" src="/public/img/close.png" alt="">
                     </div>
-                </div>       
-                <div class="option-found">
-                    <span>Link enlace 01</span>
-                </div>  
-                <div class="option-found">
-                    <span>Link enlace 02</span>
-                </div>  
-                <div class="option-found">
-                    <span>Link enlace 03</span>
-                </div>  
-
-                <div class="option-found">
-                    <span>Link enlace 03</span>
-                </div>  
-
-                <div class="option-found">
-                    <span>Link enlace 03</span>
-                </div>  
-                <div class="option-found">
-                    <span>Link enlace 03</span>
-                </div>  
-                <div class="option-found">
-                    <span>Link enlace 03</span>
-                </div>  
-                <div class="option-found">
-                    <span>Link enlace 03</span>
-                </div>  
+                </div>                   
             </div>                        
             <div class="wrapper"> 
                 {{{body}}}

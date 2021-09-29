@@ -354,6 +354,7 @@ body{
     position: absolute;
     background-color: rgba(0, 0,0,0.8);
     display: flex;    
+    z-index:5000;
 }
 .option-found{
     width: 20%;
@@ -364,7 +365,11 @@ body{
     margin: 30px;
     padding: 10px;
     font-weight: bold;
-    float:right;
+    float:left;
+}
+.option-found:hover{
+    color:rgb(170, 166, 166);
+    cursor:pointer;
 }
 .search-hidden{
     display: none;
