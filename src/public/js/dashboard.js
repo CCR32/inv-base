@@ -7,6 +7,7 @@ class Dashboard{
         this.reports = document.querySelector('.report-container');
         this.bodyreport = document.querySelector('.body-report');
         this.contInd = this.indicator.querySelector('.item-indicator');        
+        this.contDashboard = document.querySelector('.container-dashboard');
         this.UpdateReports();
         this.UpdateIndicators();
       }
@@ -17,6 +18,9 @@ class Dashboard{
     BindReports(json){
         this.bodyreport.innerHTML=json;
     }
+    BindDashboard(json){
+      this.contDashboard.innerHTML = json;
+    }
     UpdateDashboard(){
       if (this.dashboard != null){
         try {
@@ -26,7 +30,7 @@ class Dashboard{
                 body: JSON.stringify({ "cCode": 'data' })
             }).then(response => response.json())
             .then((json)=>{                    
-                
+              this.BindDashboard(json);        
             })
             .catch((e)=>{
                 throw new Error(e);

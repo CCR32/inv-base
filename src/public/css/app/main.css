@@ -500,3 +500,51 @@ body{
 .item-indicator>div>h4{
     padding-top:33%;
 }
+
+@media(max-height: 600px) {
+    .item-indicator>div>h4{
+        padding-top:10%;
+    }   
+    .report-container{
+        overflow-y:scroll;
+    }
+    .rounded-indicator-full{
+        overflow-y:scroll;
+    }
+}
+
+@media(max-height: 400px) {
+    .item-indicator>div>h4{
+        padding-top:5%;
+    }   
+    .report-container{
+        overflow-y:scroll;
+    }
+    .rounded-indicator-full{
+        overflow-y:scroll;
+    }
+}
+
+@media(max-width: 960px){
+    
+    .header-search{
+        display: none;
+    }
+    .container-menu{
+        width:100%;
+    }
+    .user-interation{
+        width: 100%;
+    }    
+}
+@media(max-width: 680px){
+    .user-info{
+        display: none;
+    }
+    .header-title{
+        width:80%;
+    }
+    .user-interation{
+        width:20%;
+    }
+}

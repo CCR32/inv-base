@@ -82,8 +82,30 @@ function createComponent(json){
     }
 }
 
-function createComponentDashboard(json){
-
+function createComponentDashboard(json){                    
+    let htmlItem = "";    
+    if(json instanceof Object){
+        try{
+            for(var item in json){     
+                console.log(item);                           
+                if (json[item] != undefined && json[item] != null){                
+                    if (json[item].folio == null||json[item].folio == undefined) break;
+                    let table = 
+                    `<tr>
+                        <td>${json[item].folio}</td>
+                        <td>${json[item].origen}</td>
+                        <td>${json[item].desorigen}</td>
+                        <td>${json[item].importe}</td>
+                        <td><a href="#" data=dddd class="alert">Ver</a></td>
+                    </tr>`;                 
+                    htmlItem+= table;         
+                }
+            }
+        }catch(e){
+            console.log(e.message);
+        }
+    }
+    return htmlItem;
 }
 
 function createComponentReports(json){
@@ -148,7 +170,7 @@ async function vdashboard(req, res){
         let parameters = [req.user[0].usrinterno, req.body.cData];  
         console.log('with parameters:' + parameters);          
         try{
-            let result = await user.get("call QrySelect_Dashboard(?,?)", parameters);                    
+            let result = await user.get("call QrySelect_Dashboard");                    
             if (result.result !== null && result.result !== undefined){            
                 if (result.hasOwnProperty("result")){
                     if (result.result.length == 0)
