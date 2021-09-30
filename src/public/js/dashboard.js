@@ -10,6 +10,7 @@ class Dashboard{
         this.contDashboard = document.querySelector('.container-dashboard');
         this.UpdateReports();
         this.UpdateIndicators();
+        this.UpdateDashboard();
       }
     }
     BindIndicator(json){

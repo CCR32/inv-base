@@ -93,9 +93,9 @@ function createComponentDashboard(json){
                     let table = 
                     `<tr>
                         <td>${json[item].folio}</td>
-                        <td>${json[item].origen}</td>
+                        <td>${json[item].origencve}</td>
                         <td>${json[item].desorigen}</td>
-                        <td>${json[item].importe}</td>
+                        <td>$${json[item].importe}</td>
                         <td><a href="#" data=dddd class="alert">Ver</a></td>
                     </tr>`;                 
                     htmlItem+= table;         
@@ -323,4 +323,4 @@ const isLoggedApi = (req, res, next) => {
     }
     res.status(200).json({error:"Loggin is required"});
 }
-module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators};
+module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators, vdashboard};
