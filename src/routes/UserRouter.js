@@ -11,6 +11,7 @@ router.get('/dashboard',loginCtrl.isLogged, loginCtrl.dashboard);
 router.post('/vreports',loginCtrl.isLogged,  loginCtrl.vreports);
 router.post('/vindicators', loginCtrl.isLogged, loginCtrl.vindicators);
 router.post('/vdashboard', loginCtrl.isLogged, loginCtrl.vdashboard);
+router.get('/profile', loginCtrl.isLogged, loginCtrl.profile);
 
 
 module.exports = router;

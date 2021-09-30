@@ -68,7 +68,7 @@ const dbObject = (function() {
             this.objConnection = mysql.createConnection(mysqlconfig);
             var _this = this;
             _this.tempObj = obj;
-            _this.res = [];
+            _this.res = [];            
             this.objConnection.connect(function(err) {
                 if (err) throw new Error(err);
                 console.log(` parameters: ${parameters}`);
@@ -90,6 +90,7 @@ const dbObject = (function() {
                     } catch (e) {
                         resolve(new resultObject(this).withError(e.message));
                     }
+                    _this.objConnection.destroy();
                     resolve(new resultObject(_this.res).withResult(_this.res).withNumberOfRows(_this.res.length));
                     return _this.res;
                 });
@@ -115,7 +116,7 @@ const dbObject = (function() {
                         try {
                             if (err) throw new Error(err);                          
                             _this.res = result;
-                            //console.log("result database: " + _this.res.affectedRows);
+                            //console.log("result database: " + _this.res.affectedRows);                            
                             resolve(new resultObject(_this.res).withResult(_this.res).withNumberOfRows(_this.res.affectedRows));
 
                             //return _this.res;

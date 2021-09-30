@@ -1,32 +1,59 @@
 <form action="Category/add" method="post">
+<h3 class="f-title">>Crear nueva categoria</h3>
     <div class="form">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12"> 
-                        <label for="cat-id">Categoria:</label>                  
-                        <input type="text" class="form-control" id="cat-id">
-                    </div>     
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12">                    
-                        <label for="cat-name">Nombre categoria:</label>                  
-                        <input type="text" class="form-control" id="cat-name">
-                    </div>     
-                </div>
-                <div class="row">
+                <div class="row form-row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <label for="cat-description">Descripcion categoria:</label>                  
-                        <input type="text" class="form-control" id="cat-description">
-                    </div>     
+                        <div class="text-container">
+                            <div class="span-container">
+                                <span>Categoria:<span>
+                            </div>
+                            <div class="input-container-x">
+                                <input type="text" name="cat-id" id="cat-id" class="input-obj" placeholder="Categoria">
+                            </div>
+                        </div>                
+                    </div>                    
+                </div>
+                <div class="row form-row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="text-container">
+                            <div class="span-container">
+                                <span>Nombre:<span>
+                            </div>
+                            <div class="input-container-x">
+                                <input type="text" name="cat-name" id="cat-name" class="input-obj" placeholder="Nombre categoria">
+                            </div>
+                        </div>                
+                    </div>                    
+                </div>
+                <div class="row form-row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="text-container">
+                            <div class="span-container">
+                                <span>Descripción:<span>
+                            </div>
+                            <div class="input-container-x">
+                                <input type="text" name="cat-description" id="cat-description" class="input-obj" placeholder="Descripcion">
+                            </div>
+                        </div>                
+                    </div>                    
                 </div>          
-                <div class="row">
+
+                <div class="row form-row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <label for="cat-des-large">Descripcion larga:</label>                  
-                        <input type="text" class="form-control" id="cat-des-large">
-                    </div>     
-                </div>       
+                        <div class="text-container">
+                            <div class="span-container">
+                                <span>Des Larga:<span>
+                            </div>
+                            <div class="input-container-x">
+                                <input type="text" name="cat-des-large" id="cat-des-large" class="input-obj" placeholder="Descripcion">
+                            </div>
+                        </div>                
+                    </div>                    
+                </div>          
+                 
                 <div>           
-                    <button type="button" id="save-changes" class="btn btn-primary item-s-changes">Guardar</button>
-                    <button type="button" id="cancel-save" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="save-changes" class="btn btn-primary item-s-changes b-actions">Guardar</button>
+                    <button type="button" id="cancel-save" class="btn btn-secondary b-actions" data-dismiss="modal">Cancelar</button>
                 </div>
     </div>          
 </form>

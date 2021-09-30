@@ -161,7 +161,9 @@ function createComponentIndicators(json){
 
 }
 
-
+async function profile(req,res){
+    res.render('login/profile', {username:req.user[0].usrinterno});
+}
 async function vdashboard(req, res){
     let user = new User();        
     if (req.isAuthenticated()){
@@ -323,4 +325,4 @@ const isLoggedApi = (req, res, next) => {
     }
     res.status(200).json({error:"Loggin is required"});
 }
-module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators, vdashboard};
+module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators, vdashboard, profile};

@@ -11,6 +11,18 @@ class Dashboard{
         this.UpdateReports();
         this.UpdateIndicators();
         this.UpdateDashboard();
+        this.timeout = setInterval(
+          ()=>{
+            this.UpdateReports();
+            this.UpdateIndicators();
+            this.UpdateDashboard();
+          },30000);
+                
+      }
+    }
+    DestroyInterval(){
+      if (this.timeout != null){
+        clearInterval(this.timeout);      
       }
     }
     BindIndicator(json){
