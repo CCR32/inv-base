@@ -1,6 +1,6 @@
 <div class="dashboard-container">
     <div class="dashboard-item">
-        <div class="rounded-indicator-right">
+        <div class="indicator-container rounded-indicator-right">
             <div class="indicator-header">
                 <span class="title-class-indicator">Articulos, Categorias, Subcategorias</span>
                 <img src="public/img/close.png" class="img-close">
@@ -18,16 +18,14 @@
                     <h4>SubCategorias</h4>
                     <span>0</span>
                 </div>                
-            </div>
-            <div class="item-indicator">
-                
-            </div>
+            </div>          
         </div>
-        <div class="rounded-indicator-left">
+        <div class="report-container rounded-indicator-left">
             <div class="indicator-header">
                 <span class="title-class-indicator">Reportes</span>
                 <img src="public/img/close.png" class="img-close">
             </div>   
+            
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -36,33 +34,15 @@
                         <th>Seleccionar</th>
                     </tr>                    
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Categorias</td>
-                        <td>Reporte de categorias</td>
-                        <td><a href="#" class="alert">Ver</a></td>
-                    </tr>                  
-                    <tr>
-                        <td>Productos</td>
-                        <td>Reporte de productos</td>
-                        <td><a href="#" class="alert">Ver</a></td>
-                    </tr>            
-                    <tr>
-                        <td>Ventas</td>
-                        <td>Reporte de Ventas</td>
-                        <td><a href="#" class="alert">Ver</a></td>
-                    </tr>                  
-                    <tr>
-                        <td>Usuarios</td>
-                        <td>Reporte de usuarios</td>
-                        <td><a href="#" class="alert">Ver</a></td>
-                    </tr>                  
+                <tbody class="body-report">
+                           
                 </tbody>
             </table>         
+            
         </div>
     </div>
     
-    <div class="dashboard-item">        
+    <div class="dashboard-container dashboard-item">        
         <div class="rounded-indicator-full">
             <div class="indicator-header">
                 <span class="title-class-indicator">Entradas / Salidas</span>
@@ -106,37 +86,12 @@
                         <td>Entrada desde proveedor</td>
                         <td>2820.00</td>
                         <td><a href="#" class="alert">Ver</a></td>
-                    </tr>           
-                       <tr>
-                        <td>Entrada</td>
-                        <td>Proveedor</td>
-                        <td>Entrada desde proveedor</td>
-                        <td>550.00</td>
-                        <td><a href="#" class="alert">Ver</a></td>
-                    </tr>                  
-                    <tr>
-                        <td>Salida</td>
-                        <td>Venta</td>
-                        <td>Salida desde venta</td>
-                        <td>5220.00</td>
-                        <td><a href="#" class="alert">Ver</a></td>
-                    </tr>            
-                    <tr>
-                        <td>Salida</td>
-                        <td>Venta</td>
-                        <td>Salida desde venta</td>
-                        <td>2220.00</td>
-                        <td><a href="#" class="alert">Ver</a></td>
-                    </tr>                  
-                    <tr>                        
-                        <td>Entrada</td>
-                        <td>Proveedor</td>
-                        <td>Entrada desde proveedor</td>
-                        <td>2820.00</td>
-                        <td><a href="#" class="alert">Ver</a></td>
-                    </tr>                  
+           
+                         
                 </tbody>
             </table>                
         </div>
     </div>
 </div>
+
+<script src="/public/js/dashboard.js"></script>

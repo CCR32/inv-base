@@ -82,6 +82,134 @@ function createComponent(json){
     }
 }
 
+function createComponentDashboard(json){
+
+}
+
+function createComponentReports(json){
+    let htmlItem = "";
+    console.log(json[0].nombre);
+    console.log(json[0].cvemodulo);
+    if(json instanceof Object){
+        try{
+            for(var item in json){     
+                console.log(item);                           
+                if (json[item] != undefined && json[item] != null){                
+                    if (json[item].cvemodulo == null||json[item].cvemodulo == undefined) break;
+                    let table = 
+                    `<tr>
+                        <td>${json[item].cvemodulo}</td>
+                        <td>${json[item].nombre}</td>
+                        <td><a href="#" data=dddd class="alert">Ver</a></td>
+                    </tr>`;                 
+                    htmlItem+= table;         
+                }
+            }
+        }catch(e){
+            console.log(e.message);
+        }
+    }
+
+    return htmlItem;
+
+}
+
+function createComponentIndicators(json){    
+    if (json instanceof Object){
+        if (json != undefined && json != null){
+        if (json[0].prod == null|| json[0].prod == undefined) return; 
+        let html =`<div class="c-item-ind">
+                        <h4>Articulos</h4>
+                        <span>${json[0].prod}</span>
+                    </div>
+                    <div class="c-item-ind">
+                        <h4>Categorias</h4>
+                        <span>${json[0].cat}</span>
+                    </div>
+                    <div class="c-item-ind">
+                        <h4>Subcategorias</h4>
+                        <span>${json[0].subcat}</span>
+                    </div>
+                    `;
+                
+            return html;
+        }
+        return "";
+    }
+
+}
+
+
+async function vdashboard(req, res){
+    let user = new User();        
+    if (req.isAuthenticated()){
+        if (req.user[0].usrinterno == undefined)        
+            throw new Error("user_error");
+        let parameters = [req.user[0].usrinterno, req.body.cData];  
+        console.log('with parameters:' + parameters);          
+        try{
+            let result = await user.get("call QrySelect_Dashboard(?,?)", parameters);                    
+            if (result.result !== null && result.result !== undefined){            
+                if (result.hasOwnProperty("result")){
+                    if (result.result.length == 0)
+                        throw new Error(messages.err_perm_not_found);    
+                     res.status(200).json(createComponentDashboard(result.result));                      
+                } else {
+                    throw new Error(messages.err_perm_not_found);
+                }
+            }
+        } catch (e){        
+            res.status(404).json({"error":e.message});
+        }
+    }
+}
+async function vreports(req, res){
+    let user = new User();        
+    if (req.isAuthenticated()){
+        if (req.user[0].usrinterno == undefined)        
+            throw new Error("user_error");
+        let parameters = [req.user[0].usrinterno, req.body.cData];  
+        console.log('with parameters:' + parameters);          
+        try{
+            let result = await user.get("call QrySelect_Reports(?,?)", parameters);                    
+            if (result.result !== null && result.result !== undefined){            
+                if (result.hasOwnProperty("result")){
+                    if (result.result.length == 0)
+                        throw new Error(messages.err_perm_not_found);    
+                     res.status(200).json(createComponentReports(result.result));                      
+                } else {
+                    throw new Error(messages.err_perm_not_found);
+                }
+            }
+        } catch (e){        
+            res.status(404).json({"error":e.message});
+        }
+    }
+}
+async function vindicators(req, res){
+    let user = new User();        
+    if (req.isAuthenticated()){
+        if (req.user[0].usrinterno == undefined)        
+            throw new Error("user_error");
+        let parameters = [req.user[0].usrinterno, req.body.cData];  
+        console.log('with parameters:' + parameters);          
+        try{
+            let result = await user.get("call QrySelect_Indicators", parameters);                    
+            if (result.result !== null && result.result !== undefined){            
+                if (result.hasOwnProperty("result")){
+                    if (result.result.length == 0)
+                        throw new Error(messages.err_perm_not_found);    
+                     res.status(200).json(createComponentIndicators(result.result));                      
+                } else {
+                    throw new Error(messages.err_perm_not_found);
+                }
+            }
+        } catch (e){        
+            res.status(404).json({"error":e.message});
+        }
+    }
+}
+
 async function dashboard(req, res){    
     res.render('Dashboard/index',{ username:req.user[0]});
     
@@ -173,4 +301,4 @@ const isLoggedApi = (req, res, next) => {
     }
     res.status(200).json({error:"Loggin is required"});
 }
-module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard};
+module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators};

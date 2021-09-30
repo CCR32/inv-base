@@ -115,8 +115,7 @@ class MenuDrawer{
     }
 
 
-    ShowSettings(item, event){
-        //alert('clicked on settings button');
+    ShowSettings(item, event){        
         if (this.dropUser !=  null){
             if (this.dropUser.className.indexOf('closed-settings')!=-1){
                 this.dropUser.className ="container-settings"

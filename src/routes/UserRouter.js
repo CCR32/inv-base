@@ -8,6 +8,8 @@ router.get('/login', loginCtrl.signup);
 router.post('/permissions', loginCtrl.permissions);
 router.post('/options', loginCtrl.options);
 router.get('/dashboard',loginCtrl.isLogged, loginCtrl.dashboard);
+router.post('/vreports',loginCtrl.isLogged,  loginCtrl.vreports);
+router.post('/vindicators', loginCtrl.isLogged, loginCtrl.vindicators);
 
 
 module.exports = router;

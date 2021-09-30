@@ -467,7 +467,7 @@ body{
 
 .indicator-header{
     width:100%;
-    height: 35px;
+    height: 15%;
     background-color: rgba(0, 0,0,0.8);
 }
 
@@ -483,9 +483,12 @@ body{
     text-align: center;
     margin:0 auto;
     padding-top:20px;
+    width:33%;
+    background:#ddd;
 }
 .item-indicator{
     display: flex;
+    height: 84%;
 }
 
 .title-class-indicator{
@@ -493,4 +496,7 @@ body{
     font-family: arial;
     font-weight: bold;
     padding:4px;
+}
+.item-indicator>div>h4{
+    padding-top:33%;
 }
