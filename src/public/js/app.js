@@ -27,7 +27,7 @@ class MenuDrawer{
             if (this.wrapper != null){              
                 if (this.buttonMenu != null){
                     this.buttonMenu.addEventListener('click', 
-                    this.ProcessEvents, false);
+                    this.ProcessEventsImage, false);
                 }              
                 if (this.items != null){
                     this.containerMenu.addEventListener('click', 
@@ -35,7 +35,7 @@ class MenuDrawer{
                 }
                 if (this.settings != null){
                     this.settings.addEventListener('click', 
-                    this.ProcessEvents, false);
+                    this.ProcessEventsImage, false);
                 }            
                 if (this.closefinder != null){
                     this.closefinder.addEventListener('click', 
@@ -48,6 +48,49 @@ class MenuDrawer{
             }
         }
 
+    ProcessEventsImage(event){
+        if (event.target.parentElement !== null){
+            // click en elemento path
+            if (typeof(event.target.parentElement.parentElement.className)=="string" ){
+
+                /// Objeto del menu
+                if (event.target.parentElement.parentElement.className.indexOf('img-menu')!=-1){
+                    if (drawerManger.statusDrawer == "closed"){
+                        drawerManger.OpenDrawer();
+                        return;
+                    }
+                    if (drawerManger.statusDrawer == "open"){
+                        drawerManger.CloseDrawer();
+                        return;
+                    }        
+                }
+                // Objeto de configuración
+                if (event.target.parentElement.parentElement.className.indexOf('img-settings')!=-1){
+                    drawerManger.ShowSettings(event.target, event);
+                    return;
+                }
+            }
+            // click en elemento svg 
+            if (typeof(event.target.parentElement.className)=="string" ){
+                /// Objeto del menu
+                if (event.target.parentElement.className.indexOf('img-menu')!=-1){
+                    if (drawerManger.statusDrawer == "closed"){
+                        drawerManger.OpenDrawer();
+                        return;
+                    }
+                    if (drawerManger.statusDrawer == "open"){
+                        drawerManger.CloseDrawer();
+                        return;
+                    }        
+                }
+                // Objeto de configuración
+                if (event.target.parentElement.className.indexOf('img-settings')!=-1){
+                    drawerManger.ShowSettings(event.target, event);
+                    return;
+                }
+            }
+        }
+    }
 
     RequestMenu(){
         if (document.URL.indexOf('login') == -1){            
@@ -70,7 +113,7 @@ class MenuDrawer{
     }
 
 
-    ProcessEvents(event){
+    ProcessEvents(event){        
         if (event.target.className.indexOf('s-link')!=-1){
             drawerManger.OpenUrl(event.target, event);
             return;
@@ -79,10 +122,11 @@ class MenuDrawer{
             drawerManger.CloseFinder(event.target, event);
             return;
         }
+        /*
         if (event.target.className.indexOf('img-settings')!=-1){
             drawerManger.ShowSettings(event.target, event);
             return;
-        }
+        }*/
         if(event.target.className.indexOf("container-image")!=-1){
             return;
         }
@@ -91,6 +135,7 @@ class MenuDrawer{
             drawerManger.SelectMenuItem(event.target, event);
             return;
         }        
+        /*
         if (drawerManger.statusDrawer == "closed"){
             drawerManger.OpenDrawer();
             return;
@@ -98,7 +143,7 @@ class MenuDrawer{
         if (drawerManger.statusDrawer == "open"){
             drawerManger.CloseDrawer();
             return;
-        }        
+        }        */
     }
 
 

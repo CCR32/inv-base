@@ -127,3 +127,20 @@
     }
     return quantity;
   }' 
+9-1-2021 0:18:45 Ejecutando procedimiento.-> call QueryInsert_Category(?,?,?,?) 004='004' Nombre ='Nombre ' Descripcion categoria 4='Descripcion categoria 4' des larga ='des larga ' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
