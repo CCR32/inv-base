@@ -45,7 +45,6 @@ function createComponentOptions(json){
 function createComponent(json){
     let headers = [];
     let htmlItem = "";     
-        
     if (json instanceof Object){   
         try{     
             for(var item in json){                            
@@ -58,7 +57,12 @@ function createComponent(json){
                         `<div class="menu-item" target="${json[item].cvemodulo}">
                             <span class="item" target="${json[item].cvemodulo}">${json[item].modulo}</span>                        
                             <div class="container-image">
-                                <img src="/public/img/down.png" class="image-item"></img>
+                                <!--<img src="/public/img/down.png" class="image-item"></img> -->
+                                <span class='menu-p-arrow'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-compact-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
+                                    </svg>
+                                </span>
                             </div>                    
                         </div>`;
                                           
