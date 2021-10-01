@@ -8,6 +8,7 @@ class MenuDrawer{
         this.finder = document.querySelector('.wrapper-search');
         this.path = document.querySelector('.menu-url');        
         this.dropUser = document.querySelector('.container-settings');
+        
         this.statusDrawer = "open";
         this.RequestMenu();
     }  
@@ -43,6 +44,10 @@ class MenuDrawer{
                 }
                 if (this.finder != null){
                     this.finder.addEventListener('click',   
+                    this.ProcessEvents, false);
+                }
+                if (this.dropUser != null){
+                    this.dropUser.addEventListener('click',
                     this.ProcessEvents, false);
                 }
             }
@@ -114,6 +119,7 @@ class MenuDrawer{
 
 
     ProcessEvents(event){        
+        
         if (event.target.className.indexOf('s-link')!=-1){
             drawerManger.OpenUrl(event.target, event);
             return;
@@ -122,11 +128,7 @@ class MenuDrawer{
             drawerManger.CloseFinder(event.target, event);
             return;
         }
-        /*
-        if (event.target.className.indexOf('img-settings')!=-1){
-            drawerManger.ShowSettings(event.target, event);
-            return;
-        }*/
+        
         if(event.target.className.indexOf("container-image")!=-1){
             return;
         }
@@ -134,16 +136,7 @@ class MenuDrawer{
             (event.target.className.indexOf("item") != -1)){
             drawerManger.SelectMenuItem(event.target, event);
             return;
-        }        
-        /*
-        if (drawerManger.statusDrawer == "closed"){
-            drawerManger.OpenDrawer();
-            return;
-        }
-        if (drawerManger.statusDrawer == "open"){
-            drawerManger.CloseDrawer();
-            return;
-        }        */
+        }                
     }
 
 
@@ -193,7 +186,15 @@ class MenuDrawer{
         }
     }
 
-    SelectMenuItem(item, event){    
+    SelectMenuItem(item, event){   
+        if (item != null) {
+            if (item.getAttribute('target') != null && 
+            (item.className.indexOf('p-item') != -1))
+            {
+                this.OpenUrl(item);
+                return;                
+            }
+        }
         if (item.className.indexOf("child") == -1){    
             this.items.forEach((item)=>{            
                 item.className ="menu-item";            

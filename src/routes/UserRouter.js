@@ -4,6 +4,7 @@ const productCtrl = require('../controllers/ProductsControllers/ProductControlle
 
 router.post('/login', loginCtrl.login);
 router.post('/logoff', loginCtrl.logoff);
+router.get('/logoff', loginCtrl.logoff);
 router.get('/login', loginCtrl.signup);
 router.post('/permissions', loginCtrl.permissions);
 router.post('/options', loginCtrl.options);
