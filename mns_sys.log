@@ -76,3 +76,54 @@
     }
     return quantity;
   }' 
+8-30-2021 17:29:21 Ejecutando procedimiento.-> call QueryInsert_Category(?,?,?,?) 004='004' Nombre 5='Nombre 5' Descripcion categoria 4='Descripcion categoria 4' des larga ='des larga ' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+8-30-2021 17:29:31 Ejecutando procedimiento.-> call QueryInsert_Category(?,?,?,?) 002='002' Nombre cambiado='Nombre cambiado' Descripcion modificada='Descripcion modificada' Larga nuevxa='Larga nuevxa' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+8-30-2021 17:29:45 Ejecutando procedimiento.-> call QueryInsert_Category(?,?,?,?) 005='005' Nombre cambiados='Nombre cambiados' Descripcion modificadax='Descripcion modificadax' Larga nueva='Larga nueva' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 

@@ -6,8 +6,10 @@
                 
             </div>
             <div class="container-info">
-                <span>@@user profile info</span>
-                <span>@@username</span>
+                {{#if username}}
+                    <span>{{username.nombre}} {{username.apaterno}} {{username.amaterno}}</span>                
+                    <span>{{username.usrinterno}}</span>                                    
+                {{/if}}
             </div>
             <div class="container-actions">
                 <button class="b-actions">Imagen</button>
@@ -17,6 +19,7 @@
         </div>
     </div>    
 
+{{#if username}}
     <div class="col-lg-9 col-md-9 col-sm-9">
     <div class="profile-info">
         <h4>Información del usuario</h4>
@@ -27,7 +30,7 @@
                             <span>Nombre:<span>
                         </div>
                         <div class="input-container-x">
-                            <input type="text" name="" id="" class="input-obj" placeholder="Nombre">
+                            <input type="text" name="" value ={{username.nombre}} id="" class="input-obj" placeholder="Nombre">
                         </div>
                     </div>                
                 </div>    
@@ -37,7 +40,7 @@
                             <span>Apellidos:<span>
                         </div>
                         <div class="input-container-x">
-                            <input type="text" name="" id="" class="input-obj" placeholder="Apellidos">
+                            <input type="text" name="" id="" value ={{username.apaterno}} class="input-obj" placeholder="Apellidos">
                         </div>
                     </div>                
                 </div>    
@@ -88,9 +91,7 @@
                         </div>
                         <div class="input-container-x">
                             <select name="user-type" id="" class="input-obj">
-                                <option value="">Elemento 01</option>
-                                <option value="">Elemento 02</option>
-                                <option value="">Elemento 03</option>
+                                <option value={{username.tipousuario}}>{{username.tipousuario}}</option>                                
                             </select>            
                         </div>
                     </div>      
@@ -115,4 +116,5 @@
         </div>    
     </div>
     </div>
+    {{/if}}
 </div>

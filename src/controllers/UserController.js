@@ -162,7 +162,7 @@ function createComponentIndicators(json){
 }
 
 async function profile(req,res){
-    res.render('login/profile', {username:req.user[0].usrinterno});
+    res.render('login/profile', {username:req.user[0]});
 }
 async function vdashboard(req, res){
     let user = new User();        
