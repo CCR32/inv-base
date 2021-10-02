@@ -1,0 +1,27 @@
+
+<h3>Listado de usuarios</h3>
+<hr>
+<table class="table table-hover">
+    <thead>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Usuario</th>
+        <th>Perfil</th>
+        <th>Eliminar</th>
+        <th>Editar</th>
+    </thead>
+    <tbody id="body-users">        
+        {{#if items}}
+            {{#each items}}
+            <tr>
+                <td>{{nombre}}</td>    
+                <td>{{amaterno}}</td>
+                <td>{{usrinterno}}</td>
+                <td>{{tipousuario}}</td>
+                <td class='item-d-td'><a class='item-d-a' href="#">Eliminar</a></td>
+                <td class='item-e-td'><a class='item-e-a' href="#">Editar</a></td>
+            </tr>
+            {{/each}}
+        {{/if}}
+    </tbody>
+</table>
