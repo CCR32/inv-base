@@ -19,15 +19,15 @@ const user = (function() {
 
     this.create = async function(procedure, parameters) {
         try {
-            return await this.model.create(procedure, parameters);
+            return this.model.RQuery(procedure, parameters);
         } catch (err) {
             throw new Error(err);
         }
     }
 
     this.delete = async function(procedure, parameters) {
-        try {
-            return this.model.delete(procedure, parameters);
+        try {            
+            return this.model.RQuery(procedure, parameters);
         } catch (err) {
             throw new Error(err);
         }

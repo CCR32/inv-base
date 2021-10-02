@@ -5,8 +5,19 @@ class Profile{
         this.IsEditable = false; 
         this.actions = document.querySelector('.container-actions'); 
         this.profile = document.querySelector('.profile-info');
+        this.image = document.querySelector('.add-file'); 
+        this.name = document.querySelector(".name");
+        this.lastname = document.querySelector(".a-pat");
+        this.username = document.querySelector(".username");
+        this.password = document.querySelector(".password");
+        this.cpassword = document.querySelector(".c-password");
+        this.usertype = document.querySelector(".u-type");
+        this.active = document.querySelector(".u-active");
+        
         if (this.actions != null){
             this.actions.addEventListener('click', this.ProcessEventsActions, false);
+            this.actions.addEventListener('change', this.ProcessEventsActions, false);
+            //this.image.addEventListener('click', this.ProcessEventsActions, false);
         }
         if (this.profile != null){
             this.profile.addEventListener('click', 
@@ -58,6 +69,7 @@ class Profile{
     }
 
     ProcessEventsActions(event){
+        
         if (event.target != null){
             if (event.target.className.indexOf('b-edit')!=-1){
                 profileInstace.EditProfile(event.target, event);
@@ -75,18 +87,68 @@ class Profile{
                 profileInstace.DisableProfile(event.target, event); 
                 return;
             }
+            if(event.target.className.indexOf('add-file')!=-1){
+                profileInstace.VerifyFile(event.target,event);
+                return;
+            }
         }        
     }
 
-    ChangeImage(item,event){
-        console.log('change image');
+    VerifyFile(item,event) {
+        
+    }
+
+    ChangeImage(item,event){        
+        this.image.click();
     }
 
     UpdateProfileInfo(item, event){
-        console.log('update profile info');
+        
+            try {
+                fetch(window.location.origin + "/udpate", {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ 
+                        "name":  this.name.value, 
+                        "lastname": this.lastname.value, 
+                        "username": this.username.value,
+                        "password": this.password.value, 
+                        "usertype": this.usertype.value, 
+                        "useractive":this.useractive.value
+                    })
+                }).then(response => response.json())
+                .then((json)=>{                    
+                    this.BindItems(json);
+                })
+                .catch((e)=>{
+                    throw new Error(e);
+                })                
+            }catch(e){
+                alert(e);
+            }
+        
     }
     DestroyProfile(item, event){
         console.log('destroy profile');
+        try {
+            fetch(window.location.origin + "/destroyi", {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ 
+                    "name":  this.name.value, 
+                    "lastname": this.lastname.value, 
+                    "username": this.username.value
+                })
+            }).then(response => response.json())
+            .then((json)=>{                    
+                console.log(json);
+            })
+            .catch((e)=>{
+                throw new Error(e);
+            })                
+        }catch(e){
+            alert(e);
+        }
     }
     DisableProfile(item,event){
         console.log('disable profile');
