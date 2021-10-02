@@ -161,3 +161,411 @@
     }
     return quantity;
   }' 
+9-2-2021 11:37:11 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) undefined='undefined' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 11:53:30 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) undefined='undefined' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 11:54:24 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) undefined='undefined' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 11:54:37 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) undefined='undefined' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 11:56:9 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) undefined='undefined' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 12:0:40 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) undefined='undefined' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 12:0:56 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) undefined='undefined' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 12:2:58 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) undefined='undefined' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 12:5:30 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) undefined='undefined' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 12:6:24 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) undefined='undefined' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 12:12:15 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) undefined='undefined' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 12:23:58 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) 00000001='00000001' Cristofer='Cristofer' cambiado='cambiado' cambiado='cambiado' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' pwd0CCAdmin='pwd0CCAdmin' ADM='ADM' undefined='undefined' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 12:26:9 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) 00000001='00000001' Cristofer='Cristofer' Cota='Cota' Cota='Cota' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' pwd0CCAdmin='pwd0CCAdmin' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 12:52:44 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) 00000001='00000001' Cristofer='Cristofer' Cota Rubio='Cota Rubio' Cota Rubio='Cota Rubio' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' delimiter $$ Create procedure QueryRegister_User(in cCveUsuario varchar(8),                                     in cNombre varchar(50),                                     in cMaterno varchar(100),                                     in cPaterno varchar(100),                                     in cUsrInterno varchar(100),                                     in cContrasena varchar(128),                                     in cTipousuario varchar(3),                                     in cEstatus varchar(1),                                     in cCreador varchar(100)) Begin     if exists( select  * from UsrSis where cveusuario = cCveUsuario ) then          update UsrSis set apaterno = cPaterno,                           amaterno = cMaterno,                                                      tipousuario = cTipousuario,                           estatus = cEstatus,                           creador = cCreador where case when cCveUsuario is null then                            usrinterno = cUsrInterno else  cveusuario = cCveUsuario end;         else              Insert into UsrSis(fecha, cveusuario, nombre, amaterno,apaterno,usrinterno,contrasena,         tipousuario, estatus, creador)         values(current_time(), cCveUsuario, cNombre,cMaterno, cPaterno, cUsrInterno, cContrasena, cTipousuario,cEstatus,cCreador);     end if;     End $$                                      delimiter ; ='delimiter $$ Create procedure QueryRegister_User(in cCveUsuario varchar(8),                                     in cNombre varchar(50),                                     in cMaterno varchar(100),                                     in cPaterno varchar(100),                                     in cUsrInterno varchar(100),                                     in cContrasena varchar(128),                                     in cTipousuario varchar(3),                                     in cEstatus varchar(1),                                     in cCreador varchar(100)) Begin     if exists( select  * from UsrSis where cveusuario = cCveUsuario ) then          update UsrSis set apaterno = cPaterno,                           amaterno = cMaterno,                                                      tipousuario = cTipousuario,                           estatus = cEstatus,                           creador = cCreador where case when cCveUsuario is null then                            usrinterno = cUsrInterno else  cveusuario = cCveUsuario end;         else              Insert into UsrSis(fecha, cveusuario, nombre, amaterno,apaterno,usrinterno,contrasena,         tipousuario, estatus, creador)         values(current_time(), cCveUsuario, cNombre,cMaterno, cPaterno, cUsrInterno, cContrasena, cTipousuario,cEstatus,cCreador);     end if;     End $$                                      delimiter ; ' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 12:56:15 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Cristofer='Cristofer' Rubio='Rubio' Rubio='Rubio' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' pwd0CCAdmin='pwd0CCAdmin' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 13:3:45 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Cristofer='Cristofer' Cota Rubio='Cota Rubio' Cota Rubio='Cota Rubio' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' pwd0CCAdmin='pwd0CCAdmin' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 13:4:22 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Cristofer='Cristofer' CCR32='CCR32' CCR32='CCR32' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' pwd0CCAdmin='pwd0CCAdmin' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 13:6:23 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Cristofer='Cristofer' Cota='Cota' Cota='Cota' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' $2a$10$xg81w/21b0o48Ox/HFmCyO1k4SeTBD3XI92/w02E2iLecsLY1FoDm='$2a$10$xg81w/21b0o48Ox/HFmCyO1k4SeTBD3XI92/w02E2iLecsLY1FoDm' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 13:12:48 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Cristofer='Cristofer' Cota Rubio='Cota Rubio' Cota Rubio='Cota Rubio' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' $2a$10$PrqR/PpVe5JX/4KT3tfA5efpfhI05MeGvvd/dODPN5gwVUow4sD9q='$2a$10$PrqR/PpVe5JX/4KT3tfA5efpfhI05MeGvvd/dODPN5gwVUow4sD9q' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 13:15:18 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Cristofer='Cristofer' CCR32='CCR32' CCR32='CCR32' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' $2a$10$hRAsEjTykTOyqS/i.GLp/uWAyR5Ci.5C84SwXBDQ86LjhjemmBgJe='$2a$10$hRAsEjTykTOyqS/i.GLp/uWAyR5Ci.5C84SwXBDQ86LjhjemmBgJe' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 13:16:17 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Cristofer='Cristofer' Cota='Cota' Cota='Cota' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' $2a$10$dvlT8RKsQzzAfrxiR1c.R.jQXplUSbVgRGXF.4mN7Ui1w.CpmMHbW='$2a$10$dvlT8RKsQzzAfrxiR1c.R.jQXplUSbVgRGXF.4mN7Ui1w.CpmMHbW' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 13:16:34 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Cristofer='Cristofer' ccr32='ccr32' ccr32='ccr32' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' $2a$10$lxU6pa497Cx8v0GhLr3xjOI6IZG0JE2Jv8r/Oo0gW7O2.O0CQuqbm='$2a$10$lxU6pa497Cx8v0GhLr3xjOI6IZG0JE2Jv8r/Oo0gW7O2.O0CQuqbm' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 13:17:33 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Hector='Hector' ROSAS='ROSAS' ROSAS='ROSAS' HRAdmin@pruebasdesarrollo.com='HRAdmin@pruebasdesarrollo.com' $2a$10$DweBnN27qHTgGQOIGFZGzuLLzxO.G7LdRcg42vVS2Iwo2Ql69pk8.='$2a$10$DweBnN27qHTgGQOIGFZGzuLLzxO.G7LdRcg42vVS2Iwo2Ql69pk8.' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-2-2021 13:55:25 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Hector='Hector' BERNARDO='BERNARDO' BERNARDO='BERNARDO' HRAdmin@pruebasdesarrollo.com='HRAdmin@pruebasdesarrollo.com' $2a$10$toFBXtFE6iqitX41kG84z.cDxh4vdZAW05rh9MM6KuJK31bum1ey.='$2a$10$toFBXtFE6iqitX41kG84z.cDxh4vdZAW05rh9MM6KuJK31bum1ey.' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 

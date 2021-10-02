@@ -299,6 +299,7 @@ body{
     font-family: arial;
     font-weight: bold;
     font-size: 13px;
+    margin-right: 10px;
 }
 .img-settings{
     width: 40px;
@@ -709,4 +710,8 @@ body{
 }
 .add-file{
     display: none;
+}
+.container-image{
+    margin-right: 5px;
+    padding-top:5px;
 }

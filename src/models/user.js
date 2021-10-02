@@ -35,7 +35,7 @@ const user = (function() {
 
     this.update = async function(procedure, parameters) {
         try {
-            return this.model.delete(procedure, parameters);
+            return this.model.RQuery(procedure, parameters);
         } catch (err) {
             throw new Error(err);
         }

@@ -171,15 +171,21 @@ function createComponentIndicators(json){
 // Este es solo para actualizar el registro 
 async function UpdateProfile(req, res) {
     const user = new User();     
-    let parameters = [req.username];                                      
+    let parameters = ["", req.body.name, 
+    req.body.lastname,req.body.lastname,
+    req.body.username,
+    bcrypt.hashSync(req.body.pwd, 10), 
+    req.body.user_type,"A", "owner"];                                      
+
     if (req.isAuthenticated()){        
         if (req.user[0].usrinterno != undefined){
         try{
             if (parameters instanceof Array){            
-                let result = await  user.update("call QueryUpdate_User(?)", parameters);            
+                let result = await  user.update("call QueryRegister_User(?,?,?,?,?,?,?,?,?)", parameters);            
                 if (result != null){                
                     if (result.hasOwnProperty("numberOfResult")){                    
-                        res.status(200).json({username: req.user, message:"user_updated"});
+                        //res.status(200).json({username: req.user, message:"user_updated"});
+                        res.redirect('/logoff');
                     } else {
                         throw new Error(messages.err_perm_not_found);
                     }
@@ -372,7 +378,7 @@ async function logoff(req, res) {
 
 async function signup(req, res){
     const password = bcrypt.hashSync("pwd0CCAdmin", 10);
-    console.log(password);
+    console.log('pwd:' + password);
     res.render('login/login', {AppName:'Nombre Aplicacion'});
 }
 

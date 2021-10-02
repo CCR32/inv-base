@@ -43,12 +43,13 @@ class Profile{
             }            
         }
         if (profileInstace.IsEditable){
-            if (event.target.className.indexOf("b-save")!= -1){
+            if (event.target.className.indexOf("b-save")!= -1){                
                 return profileInstace.VerifyInputs(event);
             }
         }
     }
     VerifyInputs(event){
+        let result = true; 
         if (this.profileInputs != null){
             this.profileInputs.forEach((input)=>{
                 let temp = input.querySelector(".input-obj")
@@ -59,12 +60,15 @@ class Profile{
                             event.preventDefault();
                             temp.focus();
                             alert(`El campo: ${temp.getAttribute('placeholder')} No puede estar vacio.` );                             
-                            return false;
+                            result = false; 
                         }
                     }
                 }
             });
-            return true;
+            if (result){
+                this.UpdateProfileInfo(event.target, event);
+            }
+            return result;
         }
     }
 
@@ -102,36 +106,13 @@ class Profile{
         this.image.click();
     }
 
-    UpdateProfileInfo(item, event){
-        
-            try {
-                fetch(window.location.origin + "/udpate", {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ 
-                        "name":  this.name.value, 
-                        "lastname": this.lastname.value, 
-                        "username": this.username.value,
-                        "password": this.password.value, 
-                        "usertype": this.usertype.value, 
-                        "useractive":this.useractive.value
-                    })
-                }).then(response => response.json())
-                .then((json)=>{                    
-                    this.BindItems(json);
-                })
-                .catch((e)=>{
-                    throw new Error(e);
-                })                
-            }catch(e){
-                alert(e);
-            }
-        
+    UpdateProfileInfo(item, event){        
+        document.forms[0].submit();        
     }
     DestroyProfile(item, event){
         console.log('destroy profile');
         try {
-            fetch(window.location.origin + "/destroyi", {
+            fetch(window.location.origin + "/destroy", {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ 

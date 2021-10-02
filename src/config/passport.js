@@ -17,6 +17,8 @@ passport.use(new LocalStategy({
                 user.password = result.result[0].contrasena;
                 if (await user.verifyPassword(password, user)){
                     return done(null, result.result);
+                }else{
+                    throw new Error('Usuario o contraseña incorrectos');
                 }
             }
         } catch (error) {
