@@ -724,3 +724,14 @@ body{
     margin-right: 5px;
     padding-top:5px;
 }
+
+.modal-dialog{
+    padding-top:30px;
+}
+.item-s-changes{
+    background-color: var(--color-headers-menus);
+    border-color: var(--color-background-items);
+}
+.item-s-changes:hover{
+    background-color: var(--color-headers-menus);
+}

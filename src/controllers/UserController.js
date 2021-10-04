@@ -166,6 +166,35 @@ function createComponentIndicators(json){
 }
 
 
+async function create(req, res) {
+    const user = new User();     
+    let parameters = ["", req.body.name, 
+    req.body.lastname,req.body.lastname,
+    req.body.username,
+    bcrypt.hashSync(req.body.pwd, 10), 
+    req.body.user_type,"A", req.user[0].usrinterno];                                      
+    console.log("Objetos: " + parameters);
+    if (req.isAuthenticated()){        
+        if (req.user[0].usrinterno != undefined){
+        try{
+            if (parameters instanceof Array){            
+                let result = await  user.update("call QueryRegister_User(?,?,?,?,?,?,?,?,?)", parameters);            
+                if (result != null){                
+                    if (result.hasOwnProperty("numberOfResult")){                    
+                        //res.status(200).json({username: req.user, message:"user_updated"});
+                        res.redirect('../users');
+                    } else {
+                        throw new Error(messages.err_perm_not_found);
+                    }
+                }
+            }
+            }catch(e){        
+                res.status(404).json({"error":e.message});
+            }    
+        }
+    }
+}
+
 
 
 // Este es solo para actualizar el registro 
@@ -421,4 +450,4 @@ const isLoggedApi = (req, res, next) => {
     }
     res.status(200).json({error:"Loggin is required"});
 }
-module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators, vdashboard, profile,DestroyProfile, UpdateProfile, register, users};
+module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators, vdashboard, profile,DestroyProfile, UpdateProfile, register,create, users};

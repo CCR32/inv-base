@@ -17,6 +17,8 @@ router.post('/update', loginCtrl.isLogged, loginCtrl.UpdateProfile)
 router.get('/profile', loginCtrl.isLogged, loginCtrl.profile);
 router.get('/users/add', loginCtrl.isLogged, loginCtrl.register);
 router.get('/users', loginCtrl.isLogged, loginCtrl.users); 
+router.post('/users/add', loginCtrl.isLogged, loginCtrl.create);
+
 
 
 

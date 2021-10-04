@@ -1,7 +1,7 @@
 <div class="row">
 {{#if username}}    
         <div class="col-lg-12 col-md-12 col-sm-12">
-            <form action="/update" method="post" enctype="application/x-www-form-urlencoded">
+            <form action="/users/add" method="post" enctype="application/x-www-form-urlencoded">
                 <div class="profile-info">
                     <h4>Registrar usuario</h4>
                     <hr>
@@ -73,7 +73,10 @@
                                     </div>
                                     <div class="input-container-x disabled-input">
                                         <select name="user_type" id="" class="input-obj u-type">
-                                            <option></option>                                
+                                            <option value="ADM">Administración</option>                                
+                                            <option value="OPR">Operación</option>                                
+                                            <option value="RPT">Reportes</option>                                
+                                            <option value="VNT">Ventas</option>                                
                                         </select>            
                                     </div>
                                 </div>      

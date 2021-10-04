@@ -569,3 +569,224 @@
     }
     return quantity;
   }' 
+9-3-2021 18:20:1 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Jose jesus='Jose jesus' montaño bastidas='montaño bastidas' montaño bastidas='montaño bastidas' JMB@outlook.com='JMB@outlook.com' $2a$10$EP.5aYzbAoaqLPCfzxBwAuxQ5ghMp20AhmQoXjdWB8UHdi3vmGPcq='$2a$10$EP.5aYzbAoaqLPCfzxBwAuxQ5ghMp20AhmQoXjdWB8UHdi3vmGPcq' ='' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-3-2021 18:33:15 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Jose jesus='Jose jesus' montaño bastidas='montaño bastidas' montaño bastidas='montaño bastidas' jmb@outlook.com='jmb@outlook.com' $2a$10$.AJv3NQEsXuyTta.n7l2JuBaqCrC6rHrA0DL4wky8M0nV0ECR9fSe='$2a$10$.AJv3NQEsXuyTta.n7l2JuBaqCrC6rHrA0DL4wky8M0nV0ECR9fSe' ='' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-3-2021 18:36:2 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Jose jesus='Jose jesus' montaño basidas='montaño basidas' montaño basidas='montaño basidas' jmb@outlook.com='jmb@outlook.com' $2a$10$wI/kfDXXhkC9jb8xLBnUBeC/m.CyRIca//hea.XbkunMyzD6n1i4a='$2a$10$wI/kfDXXhkC9jb8xLBnUBeC/m.CyRIca//hea.XbkunMyzD6n1i4a' ='' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-3-2021 18:37:43 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Jose jesus='Jose jesus' montaño bastidas='montaño bastidas' montaño bastidas='montaño bastidas' jmb@outlook.com='jmb@outlook.com' $2a$10$cuEzvB7Tah6cRr7iLTvOaOrjmXpNSGsV9/N52tQlrXLvO.rgMZcC.='$2a$10$cuEzvB7Tah6cRr7iLTvOaOrjmXpNSGsV9/N52tQlrXLvO.rgMZcC.' ='' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-3-2021 18:41:22 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Jose jesus='Jose jesus' montaño bastidas='montaño bastidas' montaño bastidas='montaño bastidas' jmb@outlook.com='jmb@outlook.com' $2a$10$hbH9iFo9OnuVDujFnFmcYue7X8uS7tLBo/jV/rrQJ0c8ZDxpuqkI.='$2a$10$hbH9iFo9OnuVDujFnFmcYue7X8uS7tLBo/jV/rrQJ0c8ZDxpuqkI.' ='' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-3-2021 18:45:13 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Jose jesus='Jose jesus' montaño bastidas='montaño bastidas' montaño bastidas='montaño bastidas' jmb@outlook.com='jmb@outlook.com' $2a$10$idjMBiTSNZ54j7uQztZy5.b9zvcsK9J/ByW1jPRTTQhovC8/lqp3.='$2a$10$idjMBiTSNZ54j7uQztZy5.b9zvcsK9J/ByW1jPRTTQhovC8/lqp3.' ='' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-3-2021 18:57:21 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Jose jesus='Jose jesus' montaño bastidas='montaño bastidas' montaño bastidas='montaño bastidas' jmb@pruebasdesarrollo.com='jmb@pruebasdesarrollo.com' $2a$10$pn8c1Yc6xMLaJ/NaausWlecKdP8WSTcp.J.YgQ480fS2y13KzNwQG='$2a$10$pn8c1Yc6xMLaJ/NaausWlecKdP8WSTcp.J.YgQ480fS2y13KzNwQG' ='' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-3-2021 19:11:20 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' Jose jesus='Jose jesus' montaño bastidas='montaño bastidas' montaño bastidas='montaño bastidas' jmb@pruebasdesarrollo.com='jmb@pruebasdesarrollo.com' $2a$10$4MyDDUTwq/5sP7gQeIW51.qkq6vzT80fOdkbpXePZ3D6FsibkB8ta='$2a$10$4MyDDUTwq/5sP7gQeIW51.qkq6vzT80fOdkbpXePZ3D6FsibkB8ta' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-3-2021 19:14:31 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' mirna daniela='mirna daniela' murray='murray' murray='murray' md@outlook.com='md@outlook.com' $2a$10$kMXy5AUEGCtY3DVdioQBIOBu0Y8.yO06l1QG3DfMM4RuapTxiUA5u='$2a$10$kMXy5AUEGCtY3DVdioQBIOBu0Y8.yO06l1QG3DfMM4RuapTxiUA5u' ADM='ADM' A='A' owner='owner' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-3-2021 19:19:12 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' mirna daniela='mirna daniela' murray='murray' murray='murray' mdmurray@outlook.com='mdmurray@outlook.com' $2a$10$leqobjf/fJn6H0MrnK8HvuJ5ZogJ34by4/cu3EUU8tOo9wIszOqnO='$2a$10$leqobjf/fJn6H0MrnK8HvuJ5ZogJ34by4/cu3EUU8tOo9wIszOqnO' OPR='OPR' A='A' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-3-2021 19:26:59 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' brayan='brayan' reyes='reyes' reyes='reyes' by@outlook.com='by@outlook.com' $2a$10$NnTMOYvpWuEiVmNpc5kH2.5twaLTOxmcBMXK2ii89ac1Ze7TAP8ea='$2a$10$NnTMOYvpWuEiVmNpc5kH2.5twaLTOxmcBMXK2ii89ac1Ze7TAP8ea' VNT='VNT' A='A' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-3-2021 19:29:17 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' rosa isela='rosa isela' valdez='valdez' valdez='valdez' RIV@OUTLOOK.COM='RIV@OUTLOOK.COM' $2a$10$VHnIDcKTGy5wYvrzOhOSiOuTVvMomKj9JhccJaTmq2Andi.AJIMD.='$2a$10$VHnIDcKTGy5wYvrzOhOSiOuTVvMomKj9JhccJaTmq2Andi.AJIMD.' RPT='RPT' A='A' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
+9-3-2021 19:32:54 Ejecutando procedimiento.-> call QueryRegister_User(?,?,?,?,?,?,?,?,?) ='' rosa isela='rosa isela' valdez='valdez' valdez='valdez' RIV@OUTLOOK.COM='RIV@OUTLOOK.COM' $2a$10$VEQGDq6ERb1WNLSVu.BzWuEx8BJfwx0UOAx.uxYZrB6x.zdAYtQ66='$2a$10$VEQGDq6ERb1WNLSVu.BzWuEx8BJfwx0UOAx.uxYZrB6x.zdAYtQ66' ADM='ADM' A='A' CCAdmin@pruebasdesarrollo.com='CCAdmin@pruebasdesarrollo.com' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 
