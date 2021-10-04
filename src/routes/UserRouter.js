@@ -18,7 +18,7 @@ router.get('/profile', loginCtrl.isLogged, loginCtrl.profile);
 router.get('/users/add', loginCtrl.isLogged, loginCtrl.register);
 router.get('/users', loginCtrl.isLogged, loginCtrl.users); 
 router.post('/users/add', loginCtrl.isLogged, loginCtrl.create);
-
+router.post('/users/find', loginCtrl.isLogged, loginCtrl.find);
 
 
 

@@ -21,6 +21,7 @@
     height: 400px;
     background-color:var(--color-login-controls);
     margin:30px auto;
+    border-top:5px solid var(--color-headers-menus);
 }
 
 .login-form  button{
@@ -727,6 +728,7 @@ body{
 
 .modal-dialog{
     padding-top:30px;
+    max-width: 700px;
 }
 .item-s-changes{
     background-color: var(--color-headers-menus);

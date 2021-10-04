@@ -790,3 +790,20 @@
     }
     return quantity;
   }' 
+9-3-2021 20:5:53 Ejecutando procedimiento.-> call QueryInsert_subCategory(?,?,?,?,?) undefined='undefined' undefined='undefined' undefined='undefined' undefined='undefined' undefined='undefined' function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }='function (item){
+    let quantity =0;
+    for(var i in this){
+      if (this[i] == item){
+        quantity++;
+      }
+    }
+    return quantity;
+  }' 

@@ -2,6 +2,7 @@
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const messages = require('../helpers/messages');
 
 
 Array.prototype.search = function(item){
@@ -387,6 +388,31 @@ async function permissions(req, res){
 
 
 
+async function find(req, res){
+    let user = new User();        
+    if (req.isAuthenticated()){
+      if (req.user[0].usrinterno == undefined)        
+         throw new Error("user_error");
+        let parameters = [req.body.username];            
+        try{
+            let result = await user.get("call QuerySelect_User(?)", parameters);                    
+            if (result.result !== null && result.result !== undefined){            
+                if (result.hasOwnProperty("result")){
+                    if (result.result.length == 0)
+                        throw new Error(messages.err_perm_not_found); 
+                        res.status(200).json(result.result);                     
+                } else {
+                    throw new Error(messages.err_perm_not_found);
+                }
+            }
+        } catch (e){        
+            res.status(404).json({"error":e.message});
+        }
+    }
+}
+
+
+
 async function users(req, res){
     let user = new User();        
     if (req.isAuthenticated()){
@@ -415,7 +441,7 @@ async function login(req, res, next) {
     let tempuser = new User();
     try {
         passport.authenticate('local', {
-            successRedirect: '/Category',
+            successRedirect: '/Dashboard',
             failureRedirect: '/error'
         })(req, res, next);
     } catch (err) {
@@ -433,8 +459,8 @@ async function logoff(req, res) {
 }
 
 async function signup(req, res){
-    const password = bcrypt.hashSync("pwd0CCAdmin", 10);
-    console.log('pwd:' + password);
+    /*const password = bcrypt.hashSync("pwd0CCAdmin", 10);
+    console.log('pwd:' + password);*/
     res.render('login/login', {AppName:'Nombre Aplicacion'});
 }
 
@@ -450,4 +476,4 @@ const isLoggedApi = (req, res, next) => {
     }
     res.status(200).json({error:"Loggin is required"});
 }
-module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators, vdashboard, profile,DestroyProfile, UpdateProfile, register,create, users};
+module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators, vdashboard, profile,DestroyProfile, UpdateProfile, register,create, users, find};
