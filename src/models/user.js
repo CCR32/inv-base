@@ -19,7 +19,7 @@ const user = (function() {
 
     this.create = async function(procedure, parameters) {
         try {
-            return this.model.RQuery(procedure, parameters);
+            return await this.model.RQuery(procedure, parameters);
         } catch (err) {
             throw new Error(err);
         }
@@ -27,7 +27,7 @@ const user = (function() {
 
     this.delete = async function(procedure, parameters) {
         try {            
-            return this.model.RQuery(procedure, parameters);
+            return await  this.model.RQuery(procedure, parameters);
         } catch (err) {
             throw new Error(err);
         }
@@ -35,7 +35,7 @@ const user = (function() {
 
     this.update = async function(procedure, parameters) {
         try {
-            return this.model.RQuery(procedure, parameters);
+            return await this.model.RQuery(procedure, parameters);
         } catch (err) {
             throw new Error(err);
         }

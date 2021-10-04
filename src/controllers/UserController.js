@@ -236,7 +236,7 @@ async function DestroyProfile(req, res) {
         if (req.user[0].usrinterno != undefined){
         try{
             if (parameters instanceof Array){            
-                let result = await  user.delete("call QueryDestroy_Profile(?)", parameters);            
+                let result = await  user.delete("call QueryDelete_User(?)", parameters);            
                 if (result != null){                
                     if (result.hasOwnProperty("numberOfResult")){                    
                         if (req.isAuthenticated()) {
@@ -245,7 +245,33 @@ async function DestroyProfile(req, res) {
                             });
                         }
                     } else {
-                        throw new Error(messages.err_cat_add);
+                        throw new Error(messages.err_user_invalid);
+                    }
+                }
+            }
+            }catch(e){        
+                res.status(404).json({"error":e.message});
+            }    
+        }
+    }
+}
+
+
+async function destroy(req, res) {
+    const user = new User();     
+    let parameters = [req.body.username];                                          
+    if (req.isAuthenticated()){        
+        if (req.user[0].usrinterno != undefined){
+        try{
+            if (parameters instanceof Object){            
+                let result = await  user.delete("call QueryDelete_User(?)", parameters);            
+                if (result != null){                
+                    if (result.hasOwnProperty("numberOfResult")){                    
+                        if (req.isAuthenticated()) {
+                            res.redirect('../users');
+                        }
+                    } else {
+                        throw new Error(messages.err_user_invalid);
                     }
                 }
             }
@@ -476,4 +502,4 @@ const isLoggedApi = (req, res, next) => {
     }
     res.status(200).json({error:"Loggin is required"});
 }
-module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators, vdashboard, profile,DestroyProfile, UpdateProfile, register,create, users, find};
+module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators, vdashboard, profile,DestroyProfile, UpdateProfile, register,create, users, find, destroy};

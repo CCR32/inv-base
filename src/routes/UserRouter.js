@@ -19,6 +19,7 @@ router.get('/users/add', loginCtrl.isLogged, loginCtrl.register);
 router.get('/users', loginCtrl.isLogged, loginCtrl.users); 
 router.post('/users/add', loginCtrl.isLogged, loginCtrl.create);
 router.post('/users/find', loginCtrl.isLogged, loginCtrl.find);
+router.post('/users/delete', loginCtrl.isLogged, loginCtrl.destroy);
 
 
 

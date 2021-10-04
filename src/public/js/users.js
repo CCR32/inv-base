@@ -61,12 +61,12 @@ class Users{
         if (target.parentElement.parentElement !== null){                
             target.parentElement.parentElement.remove();            
             try {
-                fetch(this.url + "/Users/delete", {
+                fetch(window.location.origin + "/users/delete", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ "cCode": category })
+                    body: JSON.stringify({ "username": this.userSelected })
                 }).then(response => {
                     if (response.statusText.includes("OK")) {
                         alert("Registro eliminado");                        
