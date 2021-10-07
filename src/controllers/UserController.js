@@ -465,13 +465,15 @@ async function users(req, res){
 
 async function login(req, res, next) {
     let tempuser = new User();
+    var msg = new messages.app_messages();
+    msg.loadMessages();    
     try {
         passport.authenticate('local', {
             successRedirect: '/Dashboard',
             failureRedirect: '/error'
         })(req, res, next);
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        res.status(500).json({ error: messages.err_user_invalid });
     }
 }
 

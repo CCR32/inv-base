@@ -248,7 +248,7 @@ body{
     margin-left: 15px;
     font-size: 13px;
     font-family: arial;
-
+    outline: none;
 }
 
 .text-search:focus{

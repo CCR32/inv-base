@@ -1,6 +1,7 @@
 const passport = require('passport');
 const LocalStategy = require('passport-local').Strategy;
 const User = require('../models/user');
+const app_mesages = require('../helpers/messages');
 
 passport.use(new LocalStategy({
         usernameField: 'username',
@@ -8,6 +9,9 @@ passport.use(new LocalStategy({
     },
 
     async(username, password, done) => {
+        const msg = new app_mesages.app_messages();
+        await msg.loadMessages();
+        console.log(msg);
         try {
             console.log('Entra en passport');
             const user = new User();
@@ -18,7 +22,7 @@ passport.use(new LocalStategy({
                 if (await user.verifyPassword(password, user)){
                     return done(null, result.result);
                 }else{
-                    throw new Error('Usuario o contraseña incorrectos');
+                    throw new Error(msg.getMessageByText("invalid_username_or_password"));
                 }
             }
         } catch (error) {
