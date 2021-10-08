@@ -106,3 +106,32 @@ Content-Type: application/json
 {
    "cCode": "001"       
 }
+
+
+
+
+
+
+POST http://localhost:3000/update
+Content-Type: application/update 
+
+{
+   "cCveUsuario": "000000001", 
+   "cNombre": "Christofer", 
+   "cMaterno": "CCR", 
+   "cPaterno": "CCR2", 
+   "cUsrInterno": "CCAdmin@usrinterno@email.com", 
+   "cContrasena": "", 
+   "cTipousuario":"ADM", 
+   "cEstatus":"A",
+   "cCreador":"OWNER"
+}
+
+
+
+POST http://localhost:3000/users/find
+Content-Type: application/json
+
+{
+   "username": "CCAdmin@pruebasdesarrollo.com"       
+}

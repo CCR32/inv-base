@@ -1,6 +1,39 @@
 const appModel = require('../libs/model'); 
 
+var app_procedures =(function(){
+    this.model = new appModel();
+    this.procs = [];
+    this.loadProcedures = async function(){
+        if (this.procs.length == 0){
+            let parameters= ["app-inventarios","",""];
+            let result  = await this.model.executeMYSQL("call QuerySelect_appMethods(?,?,?)", new Object(), parameters);
+            if (result != null){
+                if (result.hasOwnProperty("numberOfResult")){                       
+                    this.procs = result.result;
+                }
+            }
+        }
+    }
 
+    this.getProcedureByText =  function(procedureText,
+                                        controller, 
+                                        methodtye, 
+                                        defaultText){        
+        if (this.procs != null){
+            if(this.procs.length>0){
+                for(var i in this.procs){
+                    if (this.procs[i].hasOwnProperty("app_exec_text")){                        
+                        if (this.procs[i].app_exec_text == procedureText &&
+                            this.procs[i].app_request_method == methodtye && 
+                            this.procs[i].app_option == controller)                         
+                            return this.procs[i].app_exec_text;
+                    }
+                }
+            }
+        }
+        return defaultText;
+    }
+});
 var app_messages = (function(){
     this.model = new appModel();     
     this.msgs =[];
@@ -29,7 +62,7 @@ var app_messages = (function(){
         }
     }    
 
-    this.getMessageByText =  function(messageText){                   
+    this.getMessageByText =  function(messageText,defaultText){                   
         if (this.msgs != null){
             if (this.msgs.length>0){
                 for(var item in this.msgs){
@@ -40,6 +73,7 @@ var app_messages = (function(){
                 }
             }
         }
+        return defaultText;
     }
     
 });
@@ -66,4 +100,4 @@ const   messages = {
     err_perm_not_found:"Permisos no definidos para este usuario"
 
 };
-module.exports = {messages, app_messages};
+module.exports = {messages, app_messages, app_procedures};

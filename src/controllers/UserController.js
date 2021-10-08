@@ -3,6 +3,9 @@ const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const messages = require('../helpers/messages');
+const {msg} = require('../config/passport');
+
+
 
 
 Array.prototype.search = function(item){
@@ -17,6 +20,7 @@ Array.prototype.search = function(item){
 
 
 function createComponentOptions(json){
+    
     let htmlItem = "";    
     let header =    `<div class="wrapper-search search-hidden">   
                         <div class="search-header">
@@ -465,15 +469,14 @@ async function users(req, res){
 
 async function login(req, res, next) {
     let tempuser = new User();
-    var msg = new messages.app_messages();
-    msg.loadMessages();    
+        
     try {
         passport.authenticate('local', {
             successRedirect: '/Dashboard',
             failureRedirect: '/error'
         })(req, res, next);
     } catch (err) {
-        res.status(500).json({ error: messages.err_user_invalid });
+        res.status(500).json({ error:msg.getMessageByText("user_not_found", "Usuario o contraseña no encontrados")});
     }
 }
 
