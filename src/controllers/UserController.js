@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const messages = require('../helpers/messages');
 const {msg} = require('../config/passport');
-
+const {sysproc} = require('../config/passport');
 
 
 
@@ -291,14 +291,20 @@ async function profile(req,res){
     res.render('login/profile', {username:req.user[0]});
 }
 async function vdashboard(req, res){
+    
     let user = new User();        
+    //let proc = new messages.app_procedures(req, res); 
+    //await proc.loadProcedures();        
     if (req.isAuthenticated()){
         if (req.user[0].usrinterno == undefined)        
             throw new Error("user_error");
-        let parameters = [req.user[0].usrinterno, req.body.cData];  
-        console.log('with parameters:' + parameters);          
-        try{
-            let result = await user.get("call QrySelect_Dashboard");                    
+        let parameters = [req.user[0].usrinterno, req.body.cData];              
+        try{                          
+            let result = await user.get("CALL " + res.locals.appproc.getProcedureByText("QrySelect_Dashboard",
+                                                                                        "UserController-dashboard", 
+                                                                                        "POST",
+                                                                                        "QrySelect_Dashboard"));
+
             if (result.result !== null && result.result !== undefined){            
                 if (result.hasOwnProperty("result")){
                     if (result.result.length == 0)
@@ -321,7 +327,11 @@ async function vreports(req, res){
         let parameters = [req.user[0].usrinterno, req.body.cData];  
         console.log('with parameters:' + parameters);          
         try{
-            let result = await user.get("call QrySelect_Reports(?,?)", parameters);                    
+            //let result = await user.get("call QrySelect_Reports(?,?)", parameters);                    
+            let result = await user.get("CALL " + res.locals.appproc.getProcedureByText("QrySelect_Reports",
+                                                                                        "UserController-reports", 
+                                                                                        "POST",
+                                                                                        "QrySelect_Reports(?,?)"), parameters);
             if (result.result !== null && result.result !== undefined){            
                 if (result.hasOwnProperty("result")){
                     if (result.result.length == 0)
@@ -344,7 +354,11 @@ async function vindicators(req, res){
         let parameters = [req.user[0].usrinterno, req.body.cData];  
         console.log('with parameters:' + parameters);          
         try{
-            let result = await user.get("call QrySelect_Indicators", parameters);                    
+            //let result = await user.get("call QrySelect_Indicators", parameters);                    
+            let result = await user.get("CALL " + res.locals.appproc.getProcedureByText("QrySelect_Indicators",
+                                                                                        "UserController-indicators", 
+                                                                                        "POST",
+                                                                                        "QrySelect_Indicators"));
             if (result.result !== null && result.result !== undefined){            
                 if (result.hasOwnProperty("result")){
                     if (result.result.length == 0)
@@ -376,7 +390,11 @@ async function options(req, res){
         let parameters = [req.user[0].usrinterno, req.body.cData];  
         console.log('with parameters:' + parameters);          
         try{
-            let result = await user.get("call QrySelect_OptionsXModule(?,?)", parameters);                    
+            //let result = await user.get("call QrySelect_OptionsXModule(?,?)", parameters);                    
+            let result = await user.get("CALL " + res.locals.appproc.getProcedureByText("QrySelect_OptionsXModule",
+                                                                                        "UserController-modules", 
+                                                                                        "POST",
+                                                                                        "QrySelect_OptionsXModule(?,?)"), parameters);
             if (result.result !== null && result.result !== undefined){            
                 if (result.hasOwnProperty("result")){
                     if (result.result.length == 0)
@@ -399,7 +417,11 @@ async function permissions(req, res){
             throw new Error("user_error");
         let parameters = [req.user[0].usrinterno];            
         try{
-            let result = await user.get("call QrySelect_UserPerm(?)", parameters);                    
+            //let result = await user.get("call QrySelect_UserPerm(?)", parameters);                    
+            let result = await user.get("CALL " + res.locals.appproc.getProcedureByText("QrySelect_UserPerm",
+                                                                                        "UserController-perm", 
+                                                                                        "POST",
+                                                                                        "QrySelect_UserPerm(?)"), parameters);
             if (result.result !== null && result.result !== undefined){            
                 if (result.hasOwnProperty("result")){
                     if (result.result.length == 0)
@@ -450,7 +472,11 @@ async function users(req, res){
             throw new Error("user_error");
         let parameters = [req.user[0].usrinterno];            
         try{
-            let result = await user.get("call QuerySelectAll_Users", parameters);                    
+            //let result = await user.get("call QuerySelectAll_Users", parameters);                    
+            let result = await user.get("CALL " + res.locals.appproc.getProcedureByText("QuerySelectAll_Users",
+                                                                                        "UserController-users", 
+                                                                                        "POST",
+                                                                                        "QuerySelectAll_Users"));
             if (result.result !== null && result.result !== undefined){            
                 if (result.hasOwnProperty("result")){
                     if (result.result.length == 0)

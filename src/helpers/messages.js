@@ -3,16 +3,17 @@ const appModel = require('../libs/model');
 var app_procedures =(function(){
     this.model = new appModel();
     this.procs = [];
-    this.loadProcedures = async function(){
+    this.loadProcedures = async function(req, res){
         if (this.procs.length == 0){
             let parameters= ["app-inventarios","",""];
             let result  = await this.model.executeMYSQL("call QuerySelect_appMethods(?,?,?)", new Object(), parameters);
             if (result != null){
                 if (result.hasOwnProperty("numberOfResult")){                       
-                    this.procs = result.result;
+                    this.procs = result.result;                                        
                 }
             }
         }
+        
     }
 
     this.getProcedureByText =  function(procedureText,

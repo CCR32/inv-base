@@ -10,6 +10,8 @@ const routerIndex = require('../src/routes/UserRouter');
 const routerProudcts = require('../src/routes/ProductRouter');
 const routerInventory = require('../src/routes/InventoryRouter');
 const routerCatgegory = require('../src/routes/CategoryRouter');
+const { sysproc, app_procedures } = require('./helpers/messages');
+
 
 
 
@@ -29,6 +31,16 @@ app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(morgan({ options: "default" }));
+
+app.use( async (req,res, next)=>{    
+    let sysproc = new app_procedures(); 
+    if (sysproc.procs.length == 0 )
+        await sysproc.loadProcedures(req, res)
+    res.locals.appproc = sysproc;
+    console.log("sysproc:" + res.locals.appproc);
+    
+    next();
+});
 
 app.use(routerIndex);
 app.use(routerProudcts);
