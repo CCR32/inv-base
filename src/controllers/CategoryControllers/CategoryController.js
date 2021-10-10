@@ -13,7 +13,11 @@ async function CategoryRegister(req, res) {
                      req.body.cDescripcionLarga];                                      
     try{
         if (parameters instanceof Array){            
-            let result = await  category.create("call QueryInsert_Category(?,?,?,?)", parameters);            
+            //let result = await  category.create("call QueryInsert_Category(?,?,?,?)", parameters);            
+            let result = await  category.create("call " + res.locals.appproc.getProcedureByText("QueryInsert_Category",
+                                                                                        "CategoryController-create", 
+                                                                                        "POST",
+                                                                                        "QueryInsert_Category(?,?,?,?)"), parameters);
             if (result != null){                
                 if (result.hasOwnProperty("numberOfResult")){                    
                     res.status(200).json(result);
@@ -33,7 +37,12 @@ async function CategoryDelete(req, res) {
     let parameters = [req.body.cCode];                                      
     try{
         if (parameters instanceof Array){            
-            let result = await  category.delete("call QueryDelete_Category(?)", parameters);            
+            //let result = await  category.delete("call QueryDelete_Category(?)", parameters);            
+
+            let result = await  category.delete("call " + res.locals.appproc.getProcedureByText("QueryDelete_Category",
+                                                                                        "CategoryController-delete", 
+                                                                                        "POST",
+                                                                                        "QueryDelete_Category(?)"), parameters);
             if (result != null){                
                 if (result.hasOwnProperty("numberOfResult")){                    
                     res.status(200).json(result);
@@ -51,7 +60,12 @@ async function CategoryList(req, res) {
     console.log('Dentro de categoryView');
     let category = new Category();   
     try{
-        let result = await category.get("call QuerySelect_AllCategorys");
+        //let result = await category.get("call QuerySelect_AllCategorys");
+        let result = await category.get("CALL " + res.locals.appproc.getProcedureByText("QuerySelect_AllCategorys",
+                                                                                        "CategoryController-viewall", 
+                                                                                        "GET",
+                                                                                        "QuerySelect_AllCategorys"));
+
         if (result.result !== null && result.result !== undefined){            
             if (result.hasOwnProperty("result")){
                 if (result.result.length == 0){
@@ -71,7 +85,11 @@ async function CategoryList(req, res) {
 async function list(req, res) {    
     let category = new Category();   
     try{
-        let result = await category.get("call QuerySelect_AllCategorys");
+        //let result = await category.get("call QuerySelect_AllCategorys");
+        let result = await category.get("CALL " + res.locals.appproc.getProcedureByText("QuerySelect_AllCategorys",
+                                                                                        "CategoryController-viewall", 
+                                                                                        "GET",
+                                                                                        "QuerySelect_AllCategorys"));
         if (result.result !== null && result.result !== undefined){            
             if (result.hasOwnProperty("result")){
                 if (result.result.length == 0){
@@ -92,7 +110,12 @@ async function find(req, res) {
     let category = new Category();   
     let parameters = [req.params.code];
     try{
-        let result = await category.find("call QuerySelect_Category(?)", parameters);
+        //let result = await category.find("call QuerySelect_Category(?)", parameters);
+        let result = await category.find("CALL " + res.locals.appproc.getProcedureByText("QuerySelect_Category",
+                                                                                        "CategoryController-view", 
+                                                                                        "GET",
+                                                                                        "QuerySelect_Category(?)"));
+
         if (result.result !== null && result.result !== undefined){            
             if (result.hasOwnProperty("result")){
                 if (result.result.length == 0)
