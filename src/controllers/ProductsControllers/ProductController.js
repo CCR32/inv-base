@@ -10,7 +10,11 @@ async function destroy(req,res){
     let parameters = [req.body.cCodigo]; 
     try{
         if (parameters instanceof Array){
-            let result = await  product.delete("call QueryDelete_product(?)", parameters);
+            //let result = await  product.delete("call QueryDelete_product(?)", parameters);
+           let result = await product.delete("call " + res.locals.appproc.getProcedureByText("QryDelete_Product", 
+                                                       "ProductController-delete", 
+                                                        "POST", 
+               "QryDelete_Product(?)")); 
             if (result != null){
                 console.log(result);
                 if (result.hasOwnProperty("numberOfResult")){
@@ -35,8 +39,11 @@ async function create(req,res){
         console.log(parameters);
     try{
         if (parameters instanceof Array){            
-            let result = await  product.create("call QueryInsert_product(?,?,?,?,?,?,?,?,?)", parameters);            
-            if (result != null){                
+        //    let result = await  product.create("call QueryInsert_product(?,?,?,?,?,?,?,?,?)", parameters);            
+            let result = await  producto.create("call" + res.locals.appproc.getProcedureByText("QueryInsert_product", 
+                                                                                               "ProductController-create", 
+                                                                                                "POST","QueryInsert_Product(?,?,?,?,?,?,?,?)")); 
+            if (result != null){  
                 if (result.hasOwnProperty("numberOfResult")){                    
                     res.status(200).json(result);
                 } else {
@@ -54,7 +61,11 @@ async function find(req,res){
     const product = new Product();    
     let parameters = [req.params.codigo];
     try{
-        let result = await product.find("call QuerySelect_Products(?)", parameters);        
+        //let result = await product.find("call QuerySelect_Products(?)", parameters);        
+        let result = await product.find("call " + res.locals.appproc.getProcedureByText("QuerySelect_Product", 
+                                                        "ProductController-view", 
+                                                        "POST", "QuerySelect_Product(?)")); 
+
         if (result.result !== null && result.result !== undefined){            
             if (result.hasOwnProperty("result")){
                 if (result.result.length == 0)
