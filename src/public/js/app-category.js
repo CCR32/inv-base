@@ -68,13 +68,17 @@ class appCategory{
         fetch( this.url + "/Category/"+category)
                 .then((response) => response.json())
                 .then((json) => {       
-                this.catid.value = json[0].code;
-                this.name.value  = json[0].nombreCategoria;                         
-                this.description.value = json[0].descripcionCategoria;
-                this.large.value = json[0].descripcionLarga;
-                this.title.innerHTML = 
-                `Editar categoria ${json[0].code}.-${json[0].nombreCategoria}`;
-                $('#dialog-edit').modal();
+                        try{
+                                this.catid.value = json[0].code;
+                                this.name.value  = json[0].nombreCategoria;                         
+                                this.description.value = json[0].descripcionCategoria;
+                                this.large.value = json[0].descripcionLarga;
+                                this.title.innerHTML = 
+                                `Editar categoria ${json[0].code}.-${json[0].nombreCategoria}`;
+                                $('#dialog-edit').modal();
+                        }catch(e){  
+                                alert(e.message);
+                        }
             })
     }
 

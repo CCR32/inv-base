@@ -58,6 +58,7 @@ async function CategoryDelete(req, res) {
 /* Lista de categorias para api */
 async function CategoryList(req, res) {
     console.log('Dentro de categoryView');
+        
     let category = new Category();   
     try{
         //let result = await category.get("call QuerySelect_AllCategorys");
@@ -114,7 +115,7 @@ async function find(req, res) {
         let result = await category.find("CALL " + res.locals.appproc.getProcedureByText("QuerySelect_Category",
                                                                                         "CategoryController-view", 
                                                                                         "GET",
-                                                                                        "QuerySelect_Category(?)"));
+                                                                                        "QuerySelect_Category(?)"),parameters);
 
         if (result.result !== null && result.result !== undefined){            
             if (result.hasOwnProperty("result")){
