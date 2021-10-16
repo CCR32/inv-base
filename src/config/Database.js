@@ -13,7 +13,15 @@ const mysqlconfig = {
 };
 
 
-
+const verifyObject = function(object){ 
+        let numberOfProperties = 0;     
+        if (object !== null && object !== undefined) { 
+                numberOfProperties= Object.getOwnPropertyNames(object).length;
+                if (numberOfProperties == 0) 
+                        return false; 
+                return true; 
+        }
+}
 const resultObject = (function(result) {
     this.numberOfResult = 0;
     this.result = [];
@@ -85,8 +93,11 @@ const dbObject = (function() {
                                     Object.assign(tempItem, result[0][value]);
                                 }
                             }
-                            _this.res.push(tempItem);
+                                if (verifyObject(tempItem)){
+                                    _this.res.push(tempItem);
+                                }
                         }
+                    
                     } catch (e) {
                         resolve(new resultObject(this).withError(e.message));
                     }

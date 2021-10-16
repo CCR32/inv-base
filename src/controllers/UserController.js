@@ -473,19 +473,19 @@ async function users(req, res){
         let parameters = [req.user[0].usrinterno];            
         try{
             //let result = await user.get("call QuerySelectAll_Users", parameters);                    
-            let result = await user.get("CALL " + res.locals.appproc.getProcedureByText("QuerySelectAll_Users",
-                                                                                        "UserController-users", 
-                                                                                        "POST",
-                                                                                        "QuerySelectAll_Users"));
-            if (result.result !== null && result.result !== undefined){            
-                if (result.hasOwnProperty("result")){
-                    if (result.result.length == 0)
-                        throw new Error(messages.err_perm_not_found);    
-                     res.render('login/users', {username:req.user[0], items:result.result});
-                } else {
-                    throw new Error(messages.err_perm_not_found);
-                }
-            }
+                    let result = await user.get("CALL " + res.locals.appproc.getProcedureByText("QuerySelectAll_Users",
+                                                                                                "UserController-users", 
+                                                                                                "POST",
+                                                                                                "QuerySelectAll_Users"));
+                    if (result.result !== null && result.result !== undefined){            
+                        if (result.hasOwnProperty("result")){
+                            if (result.result.length == 0)
+                                throw new Error(messages.err_perm_not_found);    
+                             res.render('login/users', {username:req.user[0], items:result.result});
+                        } else {
+                            throw new Error(messages.err_perm_not_found);
+                        }
+                    }
         } catch (e){        
             res.status(404).json({"error":e.message});
         }
