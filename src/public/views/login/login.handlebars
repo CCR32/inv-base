@@ -4,8 +4,8 @@
     <span class="login-title">{{AppName}}</span>    
     <span>Ingrese usuario y contraseña</span>
 <form action="/login" method="POST">
-    {{#if errmessage}}
-        <h2>errmessage</h2>
+    {{#if LastError}}
+    <h4 class="error-message">{{LastError}}</h4>
     {{/if}}
     <div class="container-input">        
         <div class="x-title">

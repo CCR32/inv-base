@@ -515,6 +515,9 @@ async function logoff(req, res) {
     }
 }
 
+async function error(req, res)  {
+        res.render('login/login', {AppName:'Nombre Aplicacion', LastError:'Usuario o contraseña incorrectos'});
+}
 async function signup(req, res){
     /*const password = bcrypt.hashSync("pwd0CCAdmin", 10);
     console.log('pwd:' + password);*/
@@ -533,4 +536,4 @@ const isLoggedApi = (req, res, next) => {
     }
     res.status(200).json({error:"Loggin is required"});
 }
-module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators, vdashboard, profile,DestroyProfile, UpdateProfile, register,create, users, find, destroy};
+module.exports = { login, logoff, isLogged, signup, isLoggedApi, permissions,options, dashboard, vreports, vindicators, vdashboard, profile,DestroyProfile, UpdateProfile, register,create, users, find, destroy,error};

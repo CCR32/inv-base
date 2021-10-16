@@ -12,11 +12,13 @@ const mysqlconfig = {
     port: process.env.MYSQL_PORT
 };
 
-
+//Se creo esta función para verificar que los objetos tengan al menos una propiedad adempas de las heredadas por Object 
 const verifyObject = function(object){ 
         let numberOfProperties = 0;     
         if (object !== null && object !== undefined) { 
+                console.log('Database.js procesndo objeto' + object); 
                 numberOfProperties= Object.getOwnPropertyNames(object).length;
+
                 if (numberOfProperties == 0) 
                         return false; 
                 return true; 
@@ -93,11 +95,10 @@ const dbObject = (function() {
                                     Object.assign(tempItem, result[0][value]);
                                 }
                             }
-                                if (verifyObject(tempItem)){
-                                    _this.res.push(tempItem);
-                                }
+                        //Este cambio se agrego pra que no se agreguen registros que no tengan propiedades bug-009
+                        if (verifyObject(tempItem))
+                            _this.res.push(tempItem);
                         }
-                    
                     } catch (e) {
                         resolve(new resultObject(this).withError(e.message));
                     }

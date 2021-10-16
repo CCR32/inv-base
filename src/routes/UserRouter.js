@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const loginCtrl = require('../controllers/UserController');
 const productCtrl = require('../controllers/ProductsControllers/ProductController');
-
+router.get('/error', loginCtrl.error); 
 router.post('/login', loginCtrl.login);
 router.post('/logoff', loginCtrl.logoff);
 router.get('/logoff', loginCtrl.logoff);
