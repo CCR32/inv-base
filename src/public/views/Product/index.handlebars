@@ -12,16 +12,19 @@
     <tbody>        
         {{#if items}}
             {{#each items}}
-            <tr>
-                <td>{{codigo}}</td>    
-                <td>{{descripcion}}</td>
-                <td>{{categoria}}</td>
-                <td>{{subcategoria}}</td>
-                <td>{{precioActual}}</td>
-                <td>{{precioNormal}}</td>
-                <td><a href="#">Eliminar</a></td>
-                <td><a href="#">Editar</a></td>
-            </tr>
+                    {{#if codigo}}
+                            <tr>
+                                    
+                                <td>{{codigo}}</td>    
+                                <td>{{descripcion}}</td>
+                                <td>{{categoria}}</td>
+                                <td>{{subcategoria}}</td>
+                                <td>{{precioActual}}</td>
+                                <td>{{precioNormal}}</td>
+                                <td><a href="#">Eliminar</a></td>
+                                <td><a href="#">Editar</a></td>
+                            </tr>
+                    {{/if}}
             {{/each}}
         {{/if}}
     </tbody>

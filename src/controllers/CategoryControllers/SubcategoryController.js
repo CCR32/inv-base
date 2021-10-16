@@ -82,11 +82,11 @@ async function SubcategoryDelete(req, res) {
 async function SubcategoryView(req,res){
     let subCategory = new Subcategory();
     try{
-        //let result = await subCategory.get("call QuerySelect_AllSubCategorys");
-        let result = await  subCategory.get("call" + res.locals.appproc.getProcedureByText("QuerySelect_AllSubCategorys",
-                                                  "SubcategoryController-view", 
-                                                  "POST",
-                                                  "QuerySelect_AllSubCategorys"), parameters);
+      let result = await subCategory.get("call QuerySelect_AllSubCategorys");
+//       let result = await  subCategory.get("call" + res.locals.appproc.getProcedureByText("QuerySelect_AllSubCategorys",
+//                    "SubcategoryController-view", 
+//                                                  "POST",
+//                                                  "QuerySelect_AllSubCategorys") );
         if (result.result !== null && result.result !== undefined){            
             if (result.hasOwnProperty("result")){
                 if (result.result.length == 0)
@@ -98,6 +98,7 @@ async function SubcategoryView(req,res){
             }
         }
     } catch (e){        
+        console.log("Ocurrio un error al obtener elistado de subcategorias" + e); 
         res.status(404).json({"error":e.message});
     }
 }
@@ -108,7 +109,7 @@ async function SubcategoryList(req, res){
         let result = await  subCategory.get("call" + res.locals.appproc.getProcedureByText("QuerySelect_AllSubCategorys",
                                                   "SubcategoryController-view", 
                                                   "POST",
-                                                  "QuerySelect_AllSubCategorys"), parameters);
+                                                  "QuerySelect_AllSubCategorys"));
 
         if (result.result !== null && result.result !== undefined){            
             if (result.hasOwnProperty("result")){
