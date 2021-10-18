@@ -40,7 +40,7 @@ async function SubcategoryRegister(req, res) {
     try{
         if (parameters instanceof Array){            
             //let result = await  subcategory.create("call QueryInsert_subCategory(?,?,?,?,?)", parameters);            
-            let result = await  subCategory.create("call" + res.locals.appproc.getProcedureByText("QueryInsert_subCategory",
+            let result = await  subCategory.create("call " + res.locals.appproc.getProcedureByText("QueryInsert_subCategory",
                                                   "SubcategoryController-create", 
                                                   "POST",
                                                   "QueryInsert_subCategory(?,?,?,?,?)"), parameters);
@@ -63,7 +63,7 @@ async function SubcategoryDelete(req, res) {
     try{
         if (parameters instanceof Array){            
             //let result = await  subCategory.delete("call QueryDelete_subCategory(?)", parameters);            
-            let result = await  subCategory.delete("call" + res.locals.appproc.getProcedureByText("QueryDelete_subCategory",
+            let result = await  subCategory.delete("call " + res.locals.appproc.getProcedureByText("QueryDelete_subCategory",
                                                   "SubcategoryController-delete", 
                                                   "POST",
                                                   "QueryDelete_subCategory(?)"), parameters);
@@ -106,7 +106,7 @@ async function SubcategoryList(req, res){
     let subCategory = new Subcategory();
     try{
         //let result = await subCategory.get("call QuerySelect_AllSubCategorys");
-        let result = await  subCategory.get("call" + res.locals.appproc.getProcedureByText("QuerySelect_AllSubCategorys",
+        let result = await  subCategory.get("call " + res.locals.appproc.getProcedureByText("QuerySelect_AllSubCategorys",
                                                   "SubcategoryController-view", 
                                                   "POST",
                                                   "QuerySelect_AllSubCategorys"));
@@ -129,14 +129,17 @@ async function SubcategoryList(req, res){
 async function find(req, res){
     let subCategory = new Subcategory();
     let parameters = [req.params.code];
+    console.log("Obeniendo subcategoria con parametro:" + parameters); 
     try{
-        //let result = await subCategory.find("call QuerySelect_subCategory(?)", parameters);
-        let result = await  subCategory.get("call" + res.locals.appproc.getProcedureByText("QuerySelect_subCategory",
+            //let result = await subCategory.find("call QuerySelect_subCategory(?)", parameters);
+            let result = await  subCategory.find("call " + res.locals.appproc.getProcedureByText("QuerySelect_subCategory",
                                                   "SubcategoryController-view", 
                                                   "POST",
                                                   "QuerySelect_subCategory(?)"), parameters);
         if (result.result !== null && result.result !== undefined){            
             if (result.hasOwnProperty("result")){
+                    //imprime resultado obtendido de db
+                console.log(reusult.result); 
                 if (result.result.length == 0)
                     throw new Error(messages.err_cat_not_found);    
                 res.status(200).json(result.result);                                    

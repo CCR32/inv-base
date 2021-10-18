@@ -70,13 +70,13 @@ class appsubCategory{
         fetch( this.url + "/api/Subcategory/"+category)
                 .then((response) => response.json())
                 .then((json) => {       
-                this.catid.innerHTML = `<option value=${json[0].codeCategoria}>${json[0].codeCategoria}</option>`;
-                this.subcategory.value = json[0].subcategoria;
-                this.name.value  = json[0].nombresubCategoria;                         
-                this.description.value = json[0].descripcionsubCategoria;
-                this.large.value = json[0].descripcionLarga;
-                this.title.innerHTML = 
-                `Editar categoria ${json[0].code}.-${json[0].nombreCategoria}`;                
+                                this.catid.innerHTML = `<option value=${json[0].codeCategoria}>${json[0].codeCategoria}</option>`;
+                                this.subcategory.value = json[0].subcategoria;
+                                this.name.value  = json[0].nombresubCategoria;                         
+                                this.description.value = json[0].descripcionsubCategoria;
+                                this.large.value = json[0].descripcionLarga;
+                                this.title.innerHTML = 
+                                `Editar categoria ${json[0].code}.-${json[0].nombreCategoria}`;                
             })
         fetch( this.url + "/api/Category/list")
             .then((response) => response.json())
